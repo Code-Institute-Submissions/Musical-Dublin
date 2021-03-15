@@ -75,6 +75,7 @@
 .about-text {
     font-family: "Alegreya", sans-serif;
     font-size: 1.1rem;
+   
 }
 
 ul {
@@ -106,7 +107,7 @@ ul {
    }
 
    .about{
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 1rem;
     letter-spacing: 2px;
     text-align: center;
