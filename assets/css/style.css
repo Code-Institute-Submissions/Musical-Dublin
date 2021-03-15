@@ -22,7 +22,7 @@
 }
 
 .nav-link:hover {
-    color: #0a1128 !important;
+    color: #1282A2 !important;
 }
 
 .home-link {
@@ -54,14 +54,19 @@
     bottom: 0;
 }
 
-.social {
-    font-size: 3.5rem;
+.social i {
+    font-size: 3rem;
     color: #fefcfb;
-    margin-right: 5px;
+    margin: 55px 50px 0 0;
+    float: right;
+}
+
+.social i:hover {
+    color: #1282A2;
 }
 
 .about{
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: 1.5rem;
     font-family: "Permanent Marker", sans-serif;
     letter-spacing: 4px;
@@ -99,6 +104,40 @@ ul {
    .nav-link {
        font-size: 1rem;
    }
+
+   .about{
+    margin-top: 5px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.social i {
+    font-size: 2rem;
+    margin: 15px 30px 0 0;
+    float: right;
+}
+
+.about-text {
+    font-size: .95rem;
+    text-align: center; 
+}
+
+ul {
+    margin-top: 10px;
+}
+
+.question li a {
+    font-size: 1rem;
+    list-style-type: square;
+    text-align: center;
+}
+
+.footer {
+    height: 275px;
+}
+
 }
 
 @media only screen and (min-width: 320px) {
