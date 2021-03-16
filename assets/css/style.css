@@ -39,7 +39,7 @@
     text-decoration: underline;
 }
 
-/*---------------------------------------------Jumbotron*/
+/*---------------------------------------------Index*/
 
 .jumbotron {
     height: 500px;
@@ -89,6 +89,11 @@
    color: #034078;
    margin-left: 10px;
    margin-right: 10px;
+}
+
+.index-images {
+    height: 250px;
+    width: 100%;
 }
 
 /*---------------------------------------------Footer*/
