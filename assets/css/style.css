@@ -198,6 +198,7 @@ ul {
     height: 1190px;
   width: 100%;
   text-align: left;
+  border: 1px solid #034078;
 }
 
 .social i {
@@ -250,7 +251,7 @@ ul {
 .jumbotron {
     height: 1075px;
   width: 100%;
-  border: 0px solid #034078;
+  border: 1px solid #034078;
   border-left: 0;
   border-right: 0;
 }
@@ -274,7 +275,7 @@ ul {
    .jumbotron {
     height: 955px;
   width: 100%;
-  border: 0;
+  border: 1px solid #034078;
 }
 }
 
@@ -293,9 +294,8 @@ ul {
    }
 
    .jumbotron {
-  border: 0;
-  
-}
+  border: 1px solid #034078;
+  }
 }
 
 @media only screen and (min-width: 411px) {
@@ -315,6 +315,7 @@ ul {
    .jumbotron {
     height: 900px;
   width: 100%;
+  border: 1px solid #034078;
   }
 }
 
@@ -330,6 +331,10 @@ ul {
 
    .nav-link {
      font-size: 1.75rem;
+   }
+
+   .jumbotron {
+   border: 1px solid #034078;
    }
 }
 
