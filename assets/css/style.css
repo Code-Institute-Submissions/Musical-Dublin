@@ -361,6 +361,11 @@ ul {
    .nav-link {
      font-size: 2rem;
    }
+
+   .jumbotron {
+       height: 650px;
+    border: 1px solid #034078;
+ }
 }
 
 @media only screen and (min-width: 1000px) {
