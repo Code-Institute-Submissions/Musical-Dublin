@@ -39,7 +39,7 @@
     text-decoration: underline;
 }
 
-/*---------------------------------------------Carousel*/
+/*---------------------------------------------Hero Image*/
 
 #image-text-outer {
     position: relative;
@@ -51,21 +51,37 @@
 .image-index {
  height:700px;
  width: 100%;
- /*background: url("./assets/images/nch.jpg") no-repeat center center !important;*/
- 
 }
 
 .text-overlay {
     height: 600px;
     width: 600px;
-    background-color: rgba(254, 252, 251, 0.7);
+    background-color: rgba(254, 252, 251, 0.9);
     position: absolute;
-    top: 25%;
+    top: 65px;
     bottom: 25%;
-    left: 25%;
-    font-family: "Alegreya", sans-serif;
-    Font-size :1rem;
+    left: 410px;
     border-radius: 15px;
+    text-align: center;
+    
+}
+
+.heading {
+    font-family: "Permanent marker", sans-serif;
+    font-size: 3.5rem;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #034078;
+}
+
+.normal-text {
+    font-family: "Alegreya", sans-serif;
+    font-weight: 500;
+   font-size: 1.25rem;
+   color: #034078;
+   margin-left: 10px;
+   margin-right: 10px;
 }
 
 /*---------------------------------------------Footer*/
@@ -119,6 +135,21 @@ ul {
     color: #fefcfb;
     margin-top: 3px;
     list-style-type: square;
+}
+
+/*---------------------------------------------Buttons*/
+
+.btn {
+    font-family: "Alegreya", sans-serif;
+    background-color: #034078;
+    color: #fefcfb;
+    padding: 10px 20px 10px 20px;
+    margin-top: 15px;
+}
+
+.btn:hover {
+     background-color: #1282A2;
+     border: 1px solid #034078;
 }
 
 /*---------------------------------------------Media Query*/
