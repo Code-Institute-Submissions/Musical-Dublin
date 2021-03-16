@@ -151,9 +151,19 @@ ul li {
   list-style-type: none;
 }
 
+/*---------------------------------------------Contact*/
+
+.get-in-touch {
+    margin-top: 25px;
+}
+
+.get-in-touch-submit {
+    margin-bottom: 25px;
+}
+
 /*---------------------------------------------Buttons*/
 
-.jumbotron .btn {
+ .btn {
     font-family: "Alegreya", sans-serif;
     background-color: #034078;
     color: #fefcfb;
