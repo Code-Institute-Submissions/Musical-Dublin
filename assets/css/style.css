@@ -86,6 +86,15 @@
     color: #034078;
 }
 
+.heading2 {
+    font-family: "Permanent marker", sans-serif;
+    font-size: 3.5rem;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: #034078;
+}
+
 .normal-text {
     font-family: "Alegreya", sans-serif;
     font-weight: 500;
