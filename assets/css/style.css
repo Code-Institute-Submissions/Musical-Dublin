@@ -164,6 +164,38 @@ ul li {
   list-style-type: none;
 }
 
+/*---------------------------------------------main.html*/
+
+/*.js-target1 {
+    background-color: green;
+}
+
+.js-target2 {
+    background-color: white;
+}
+
+.js-target3 {
+    background-color: orange;
+}
+
+.js-container {
+    height: 200px;
+    width: 100%;
+}*/
+
+.heading3 {
+    font-family: "Permanent marker", sans-serif;
+    font-size: 2.5rem;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: #034078;
+}
+
+.heading-color-2{
+    color: #1282a2;
+}
+
 /*---------------------------------------------Contact*/
 
 .get-in-touch {
