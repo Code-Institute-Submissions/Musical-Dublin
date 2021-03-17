@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Permanent+Marker&display=swap');
 
+* {
+    background-color: #fefcfb;
+}
+
 /*---------------------------------------------Navbar*/
 
 .navbar{
@@ -314,7 +318,7 @@ ul {
    }
 
    .jumbotron {
-  border: 1px solid #034078;
+  border: 0;
   }
 }
 
@@ -335,7 +339,7 @@ ul {
    .jumbotron {
     height: 900px;
   width: 100%;
-  border: 1px solid #034078;
+  border: 0;
   }
 }
 
@@ -354,7 +358,7 @@ ul {
    }
 
    .jumbotron {
-   border: 1px solid #034078;
+   border: 0;
    }
 }
 
