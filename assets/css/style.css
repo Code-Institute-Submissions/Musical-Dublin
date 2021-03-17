@@ -301,6 +301,10 @@ ul {
   width: 100%;
   border: 1px solid #034078;
 }
+
+.btn {
+      margin-top: 20px;
+  }
 }
 
 @media only screen and (min-width: 375px) and (max-width: 400px) {
@@ -319,6 +323,10 @@ ul {
 
    .jumbotron {
   border: 0;
+  }
+
+  .btn {
+      margin-top: 35px;
   }
 }
 
@@ -341,6 +349,10 @@ ul {
   width: 100%;
   border: 0;
   }
+
+  .btn {
+      margin-top: 40px;
+  }
 }
 
 @media only screen and (min-width: 414px) {
@@ -360,6 +372,10 @@ ul {
    .jumbotron {
    border: 0;
    }
+
+   .btn {
+      margin-top: 40px;
+  }
 }
 
 @media only screen and (min-width: 540px) {
