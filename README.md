@@ -3,6 +3,31 @@ This site is intended as a go to site for both Irish people living in or visitin
 venues, education facilities and music shops in the city.
 
 
+
+
+## Design
+* Font Type:
+1. The font chosen for the headings on the site is the 'Permanent Marker' font from Google fonts. This was chosen as it has a playful 
+and non-formal look to it, suitable for a site dedicated to music. I felt it would be welcoming to the diverse usership that this site
+is aimed at, at least more than for example, the [Banger Tv](https://www.bangertv.com) logo which is a pretty obvious choice for a site
+dedicated to heavy metal music. A fallback font of sans-serif is included incase a browser cannot load the Permanent Marker font. 
+2. The font chosen for all other text on the site is 'Alegreya' from Google Fonts with a fallback font of sans-serif. This was chosen for 
+its easy readability.
+* Colour Scheme:
+1. As this is a site focusing on musical activity within the Dublin area, I decided on a combination of blue colours similar to the Dublin County
+flag. Four blue variants are used, these are Oxford Blue(#0A1128), Royal Blue(#001F54), Indigo Dye(#034078) and Celadon Blue(#1282A2).
+The white colour, #FEFCFB, was used in the site because the Dublin GAA alternative jersey is a similar white colour and it contrasted with the 
+other colours well. 
+2. The colours were generated on an app called [Coolors](https://www.coolors.co) which gives five-colour lists of colours
+that compliment each other well. I had the above reasons in mind when I decided on the particular list that I used.
+* Images:
+1. The images used all portray either concert venues, education facilities or music shops in accordance with the purpose of the site.
+
+
+
+
+
+
 ## Credits
 ### Photos:
 
@@ -28,7 +53,7 @@ contact.html:
 
 
 
-3. Photo of Three Arena taken from https://extra.ie/2017/06/10/entertainment/entertainment-news/dublins-3-arena-security
+
 
 
 
