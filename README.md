@@ -10,7 +10,7 @@ venues, education facilities and music shops in the city.
 1. The font chosen for the headings on the site is the 'Permanent Marker' font from Google fonts. This was chosen as it has a playful 
 and non-formal look to it, suitable for a site dedicated to music. I felt it would be welcoming to the diverse usership that this site
 is aimed at, at least more than for example, the [Blabbermouth](https://www.blabbermouth.net) logo font which is an obvious choice for a site
-dedicated to heavy metal music. A fallback font of sans-serif is included in case a browser cannot load the Permanent Marker font. 
+dedicated to heavy metal music and aimed mainly at fans of the genre. A fallback font of sans-serif is included in case a browser cannot load the Permanent Marker font. 
 2. The font chosen for all other text on the site is 'Alegreya' from Google Fonts with a fallback font of sans-serif. This was chosen for 
 its easy readability.
 * Colour Scheme:
