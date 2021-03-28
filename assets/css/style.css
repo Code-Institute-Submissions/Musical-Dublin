@@ -175,6 +175,11 @@
     height: 500px;
 }
 
+#map {
+    width: 60%;
+    height: 450px;
+}
+
 /*.border {
     border: 1.5px solid #1282A2;
 }*/
