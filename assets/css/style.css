@@ -96,6 +96,38 @@
     color: #034078;
 }
 
+.heading-left {
+    font-family: "Permanent marker", sans-serif;
+    font-size: 3rem;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #034078;
+    text-align: left;
+    position: relative;
+    left: 0px;
+    text-decoration: underline;
+}
+
+.heading-middle {
+    font-family: "Permanent marker", sans-serif;
+    font-size: 3rem;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #034078;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.heading-right {
+    font-family: "Permanent marker", sans-serif;
+    font-size: 3rem;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #034078;
+    text-align: left;
+    text-decoration: underline;
+}
+
 .normal-text {
     font-family: "Alegreya", sans-serif;
     font-weight: 500;
@@ -137,6 +169,15 @@
     color: #034078;
     text-decoration: none;
 }
+
+.images-below {
+    width: 100%;
+    height: 500px;
+}
+
+/*.border {
+    border: 1.5px solid #1282A2;
+}*/
 
 /*---------------------------------------------Footer*/
 
