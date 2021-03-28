@@ -46,6 +46,7 @@
 /*---------------------------------------------Index*/
 
 .jumbotron {
+    /*height: 500px;*/
     height: 500px;
     width: 100%;
     background-color: #fefcfb;
@@ -108,6 +109,33 @@
     height: 250px;
     width: 100%;
     object-fit: cover;
+}
+
+.height {
+    height: 500px;
+    width: 100%;
+}
+
+.headers-below {
+    font-size: 2rem;
+    font-family: "Permanent marker", sans-serif;
+    color: #034078;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.list {
+    font-size: 1.25rem;
+    font-family: "Alegreya", sans-serif;
+    color: #1282A2;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.list:hover{
+    color: #034078;
+    text-decoration: none;
 }
 
 /*---------------------------------------------Footer*/
