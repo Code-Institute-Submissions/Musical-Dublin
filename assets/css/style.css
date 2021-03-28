@@ -112,7 +112,7 @@
 }
 
 .height {
-    height: 500px;
+    height: 400px;
     width: 100%;
 }
 
@@ -120,8 +120,8 @@
     font-size: 2rem;
     font-family: "Permanent marker", sans-serif;
     color: #034078;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .list {
