@@ -15,7 +15,6 @@ $(".concert-hall").click(function(){
     `).scrollDown(10000);
 })
 
-
 $(".education").click(function(){
     $(".images-below").html(`
     <ul>
@@ -30,6 +29,18 @@ $(".education").click(function(){
     </ul>`);
 })
 
+$(".shops").click(function(){
+    $(".images-below").html(`
+    <ul>
+    <li><h5 class="headers-below">General Music Stores</h5></li>
+    <li><a href="https://www.xmusic.ie" target="_blank" class="list">Xmusic</a></li>
+    <li><a href="https://www.musicmaker.ie" target="_blank" class="list">Music Maker</a></li>
+    <li><a href="https://www.waltons.ie/home/our-stores/" target="_blank" class="list">Waltons Music</a></li>
+    <li><a href="https://www.goodwinsmusic.ie" target="_blank" class="list">Goodwins Music</a></li>
+    <li><h5 class="headers-below">Tradional Irish</h5></li>
+    <li><a href="https://www.mcneelamusic.com" target="_blank" class="list">McNeela Music Instruments</a></li>
+    </ul>`);
+})
 
 
 
