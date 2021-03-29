@@ -96,29 +96,16 @@
     color: #034078;
 }
 
+.heading3 {
+    font-family: "Permanent marker", sans-serif;
+    font-size: 2.5rem;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #034078;
+    text-align: center;
+}
+
 .heading-left {
-    font-family: "Permanent marker", sans-serif;
-    font-size: 3rem;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    color: #034078;
-    text-align: left;
-    position: relative;
-    left: 0px;
-    text-decoration: underline;
-}
-
-.heading-middle {
-    font-family: "Permanent marker", sans-serif;
-    font-size: 3rem;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    color: #034078;
-    text-align: left;
-    text-decoration: underline;
-}
-
-.heading-right {
     font-family: "Permanent marker", sans-serif;
     font-size: 3rem;
     margin-top: 10px;

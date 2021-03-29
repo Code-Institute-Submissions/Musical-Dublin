@@ -64,23 +64,20 @@
 <section>
     <div class="container">
   <div class="row">
-      <!--<div class="col-12 d-sm-none">
-          <h2 class="heading2">Venues</h2>
-      </div>-->
-    <div class="col-12 col-sm-4 venue-img-hover">
-      <img class="img-fluid index-images concert-hall" alt="National Concert Hall, Dublin" src="./assets/images/nch.jpg">
+    <div class="col-12 col-md-4">
+      <img class="img-fluid index-images concert-hall" data-type="venues" alt="National Concert Hall, Dublin" src="./assets/images/nch.jpg">
+      <h2 class="heading3 concert-hall">Venues</h2>
+      <div id="venues-drop"></div>
     </div>
-    <!--<div class="col-12 d-sm-none">
-          <h2 class="heading2">Education</h2>
-      </div>-->
-    <div class="col-12 col-sm-4">
-       <img class="img-fluid index-images education" alt="Newpark Music Centre, Dublin" src="./assets/images/newpark3.jpg">
+    <div class="col-12 col-md-4">
+       <img class="img-fluid index-images education" data-type="schools" alt="Newpark Music Centre, Dublin" src="./assets/images/newpark3.jpg">
+       <h2 class="heading3 education">Education</h2>
+       <div id="education-drop"></div>
     </div>
-   <!-- <div class="col-12 d-sm-none">
-          <h2 class="heading2">Shops</h2>
-      </div>-->
-    <div class="col-12 col-sm-4 ">
-       <img class="img-fluid index-images shops" alt="Waltons, Dublin" src="./assets/images/music-shop.jpg">
+    <div class="col-12 col-md-4 ">
+       <img class="img-fluid index-images shops" data-type="shops" alt="Waltons, Dublin" src="./assets/images/music-shop.jpg">
+       <h2 class="heading3 shops">Shops</h2>
+       <div id="shops-drop"></div>
     </div>
   </div>
 </div>
@@ -142,7 +139,44 @@
  </div>
 </div>
 </footer>
+   <script>
+        /*function initMap() {
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 3,
+                center: {
+                    lat: 46.619261,
+                    lng: -33.134766
+                }
+            });
 
+            var labels = "ABCDEFGHIJKLMONPQRSTUVWXYZ";
+
+            var locations = [{
+                lat: 40.785091,
+                lng: -73.968285
+            }, {
+                lat: 41.084045,
+                lng: -73.874256
+            }, {
+                lat: 40.754932,
+                lng: -73.984016
+            }];
+
+            var markers = locations.map(function(location, i) {
+                return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                });
+            });
+
+            var markerCluster = new MarkerClusterer(map, markers, {
+                imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+            });
+        }*/
+    </script>
+
+
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnH_JU3kDVxfjVtZtrFHCsd9neP1W3_GU&callback=initMap"></script>
 
 <script type="text/javascript" src="./assets/js/map.js"></script>
