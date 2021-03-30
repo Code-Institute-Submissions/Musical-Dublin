@@ -1,189 +1,40 @@
-//code was taken from google maps api. Code was altered to suit website needs//
-/* markers=[];
- 
-function initMap() {
-    const input = document.getElementById("pac-input");
-    const points = [
-    {lat: 54.607868,
-     lng:  -5.926437,
-     content:"Belfast"},
-     //Belfast
-
-    { lat: 52.25833,
-     lng: -7.11194,
-     content:"waterford"},
-    //Waterford
-
-      { lat:  55.007,
-     lng: -7.318268,
-     content:"Derry"
-     },
-     //Derry
-
-      { lat:  54.26969,
-     lng:  -8.46943,
-     content:"Sligo"
-     },
-
-      { lat:  53.350140,
-     lng: -6.266155,
-     content:"Dublin"
-     },
-     //Dublin
-
-      { lat:  53.43333,
-     lng:  -7.95,
-     content:"Athlone"
-     },
-     //Athlone
-
-      { lat: 54.65, 
-     lng: -8.11667,
-     content:"Donegal"
-     },
-     //Donegal
-
-      { lat: 52.061413,
-     lng: -9.526437,
-     content:"Kerry"
-     },
-     //Kerry
-
-      { lat:  53.270962,
-     lng: -9.062691,
-     content:"Galway"
-     },
-     //Galway
-
-      { lat:  51.903614,
-     lng:  -8.468399,
-     content:"Cork"
-     },
-     //Cork
-
-      { lat:  52.668018,
-     lng: -8.630498,
-     content:"Limerick"
-     },
-     //Limerick
-
-      { lat:  52.65417,
-     lng: -7.25222,
-     content:"Kilkenny"
-     },
-     //Kilkenny
-
-    ];
-    
-    //Map is centered on Ireland 
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 6.35,
-      center: {lat:53.5,lng:-7.6},
-      zoomControl: true,
-    });
-
-    const options = {
-        fields: ["formatted_address", "geometry", "name"],
-    };
-
-    points.map(point=>{
-          const infowindow = new google.maps.InfoWindow({
-              content: point.content,
-            });
-            const marker = new google.maps.Marker({
-                position: {lat:point.lat,lng:point.lng},
-                map,
-                title: point.content,
-            });
-            marker.addListener("click", () => {
-                infowindow.open(map, marker);
-            });
-            markers.push(marker);
-        });
-
-    const infowindow = new google.maps.InfoWindow();
-    const infowindowContent = document.getElementById("infowindow-content");
-    infowindow.setContent(infowindowContent);
-    const marker = new google.maps.Marker({
-      map,
-      anchorPoint: new google.maps.Point(0, -29),
-    });
-
-     const autocomplete = new google.maps.places.Autocomplete(input, options);
-    autocomplete.setComponentRestrictions({
-        country: ["ie","gb"]});
-        autocomplete.bindTo("bounds", map);
-        autocomplete.addListener("place_changed", () => {
-        infowindow.close();
-        marker.setVisible(false);
-        const place = autocomplete.getPlace();
-
-    if (!place.geometry || !place.geometry.location) {
-        // User entered the name of a Place that was not suggested and
-        // pressed the Enter key, or the Place Details request failed.
-        window.alert("No details available for input: '" + place.name + "'");
-        return;
-      }
-
-      if (place.geometry.viewport) {
-          map.fitBounds(place.geometry.viewport);
-      }
-        else {
-          map.setCenter(place.geometry.location);
-          map.setZoom(17);
-        }
-         marker.setPosition(place.geometry.location);
-        marker.setVisible(true);
-        infowindowContent.children["place-name"].textContent = place.name;
-        infowindowContent.children["place-address"].textContent = place.formatted_address;
-        marker.addListener("click", () => {
-        infowindow.open(map, marker);
-         });
-        });
-
-      }.  */
-
-
-
-
- /* function initMap() {
-    var options = {
-        center: {lat: 53.350140,lng: -6.266155},
-        zoom: 13
-    };
-
-    var map = new google.maps.Map(document.getElementById("map"), options);
-}.  */
-
-initMap(); 
-
-
-      // Initialize and add the map
-      function initMap() {
-        // The location of Uluru
-        const concertHall = { lat: 53.350140, lng: -6.266155 };
-        // The map, centered at Uluru
+    function initMap() {
+        // The location of the National Concert Hall
+        const concertHall = { lat: 53.334653, lng: -6.258785 };
+        // The map, centered at the National Concert Hall
         const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 13,
+          zoom: 11,
           center: concertHall,
         });
-        // The marker, positioned at Uluru
+        // The marker, positioned at the National Concert Hall
         const marker = new google.maps.Marker({
           position: concertHall,
           map: map,
         });
-      }
+
+        // List of all marker coordinates inserted on the map 
+      const myCoordinates = [
+          {"lat": 53.342609,"lng": -6.277989,}, //Vicar Street
+          {"lat": 53.348034, "lng": -6.262003,}, //The Academy
+          {"lat": 53.343167, "lng": -6.28168,}, //Arthurs Blues & Jazz
+          {"lat": 53.347496, "lng": -6.228508,}, //Three Arena
+          {"lat": 53.289883, "lng": -6.171961,}, //Newpark Music Centre & Rock Jam(Also held in Newpark Music Centre)
+          {"lat": 53.294747, "lng": -6.184702,}, //UCD 
+          {"lat": 53.339906, "lng": -6.273719,}, //BIMM
+          {"lat": 53.385592, "lng": -6.140353,}, //Frank Kearns Rock School
+          {"lat": 53.317752, "lng": -6.360684,}, //XMusic
+          {"lat": 53.343126, "lng": -6.262568,}, //Music Maker
+          {"lat": 53.394871, "lng": -6.394655}, //Waltons School of Music
+          {"lat": 53.348098, "lng": -6.268734}, //Goodwins Music 
+          {"lat": 53.394518, "lng": -6.145391}, //McNeela Irish Music Instruments
+    ];
     
+    //Loop over myCoordinates 
 
+    for (let i = 0; i < myCoordinates.length; i++) {
+        const marker = new google.maps.Marker({position: myCoordinates[i]});
+        marker.setMap(map);
+    }
+      }
 
-/*function initMap() {
-            var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 3,
-                center: {
-                    lat: 46.619261,
-                    lng: -33.134766
-                }
-                 
-            });
-        }
-*/
+     

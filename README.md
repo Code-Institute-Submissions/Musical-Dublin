@@ -25,7 +25,9 @@ that compliment each other well. I had the above reasons in mind when I decided 
 
 
 
-
+#Debugging
+1. I could not get the Google map to render on the screen. I then commented out an asterisk in my CSS file that set the entire 
+sites background-color to #fefcfb, and this worked to render the map on screen.
 
 
 ## Credits
