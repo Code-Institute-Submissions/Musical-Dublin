@@ -39,7 +39,7 @@ const map = new google.maps.Map(document.getElementById("map"), {
                                                                                            Jazz performance. Teaching staff here includes
                                                                                            luminaries on the Irish and International scenes
                                                                                            like Ronan Guilfoyle and Tommy Halferty. 
-                                                                                           
+                                                                                           <br>
                                                                                            The school is also the location of Rock Jam, a 
                                                                                            school offering lessons in a band performance setting
                                                                                            where students learn to play as part of a band rather
@@ -49,31 +49,50 @@ const map = new google.maps.Map(document.getElementById("map"), {
                                                                               Classical Music in both Theory and Composition.
                                                                               The course also includes a study in various musical traditions
                                                                               including Indian Carnatic music and Irish Traditional music.`}, //UCD 
-          {"name": "BIMM", "lat": 53.339906, "lng": -6.273719, "information": "BIMM opened in 2010 and has fast become Ireland's"}, //BIMM
+          {"name": "BIMM", "lat": 53.339906, "lng": -6.273719, "information": `The Irish branch of BIMM opened in 2012 and has become renowned
+                                                                               for the high quality performers it has produced in that time.
+                                                                               Offering courses in Pop and Rock performance the school offers
+                                                                               a four-year degree in music performance.`}, //BIMM
           {"name": "Rock School", "lat": 53.385592, "lng": -6.140353, "information": `Frank Kearns Rock School offers lessons to all ages and
                                                                                       on all instruments. Lessons are conducted
                                                                                       in a one to one setting ranging from 30 minute to 
                                                                                       hour long classes.`}, //Frank Kearns Rock School
-          {"name": "XMusic", "lat": 53.317752, "lng": -6.360684, "information": `XMusic is a `}, //XMusic
-          {"name": "Music Maker", "lat": 53.343126, "lng": -6.262568, "information": "Music Maker...."}, //Music Maker
-          {"name": "Waltons", "lat": 53.394871, "lng": -6.394655, "information": "Waltons...."}, //Waltons School of Music
-          {"name": "Goodwins", "lat": 53.348098, "lng": -6.268734, "information": "Goodwins is..."}, //Goodwins Music 
-          {"name": "McNeela", "lat": 53.394518, "lng": -6.145391, "information": "McNeela...."}, //McNeela Irish Music Instruments
+          {"name": "XMusic", "lat": 53.317752, "lng": -6.360684, "information": `XMusic is a music superstore stocking everything from drums
+                                                                                 to guitar equipment. Located beside the Red Cow in Ballymount,
+                                                                                 Walkinstown just off the m50, XMusic is a three-story store with 
+                                                                                 something for everyone.`}, //XMusic
+          {"name": "Music Maker", "lat": 53.343126, "lng": -6.262568, "information": `Music Maker is Ireland's longest running general
+                                                                                      music shop stocking all manner of instruments and equipment.
+                                                                                      Feel free to ask any of their friendly staff for help finding the 
+                                                                                      perfect instrument for you.`}, //Music Maker
+          {"name": "Waltons", "lat": 53.394871, "lng": -6.394655, "information":  `Waltons is a long established family business offering quality
+                                                                                   instruments. Get excellent advice on any of your needs.
+                                                                                   The shop owners are friendly to musicians playing the 
+                                                                                   in-store instruments, as seen in the motion picture 'Once'.`}, //Waltons School of Music
+          {"name": "Goodwins", "lat": 53.348098, "lng": -6.268734, "information": `Goodwins is a shop offering traditional Irish instruments as
+                                                                                   well as instrument repair. Offering great prices on
+                                                                                   repairs, Goodwins has won a great reputation on the
+                                                                                   Traditional Irish music scene.`}, //Goodwins Music 
+          {"name": "McNeela", "lat": 53.394518, "lng": -6.145391, "information": `McNeela Irish Music Instruments is a recently 
+                                                                                  established business specialising in traditional Irish 
+                                                                                  instruments. `}, //McNeela Irish Music Instruments
     ];
     
    var InfoObj = [];
+
+   
 
     //Loop over and insert myCoordinates onto map & name of venue
     for (let i = 0; i < myCoordinates.length; i++) {
         const contentString = '<h3>' + myCoordinates[i].name + '</h3>' + 
                          '<p>' + myCoordinates[i].information + '</p>' +
-                         '<a href="https://developers.google.com/maps/documentation/javascript/overview">' + "Click Here" + '</a>';
+                         '<a >' + "Website"  + '</a>';
      
         const marker = new google.maps.Marker({
         position: new google.maps.LatLng(myCoordinates[i].lat, myCoordinates[i].lng),
         map: map,  //This is the map that the markers will be attached to, the value is the variable "map"
         title: myCoordinates[i].name, //Will add business name when icon is hovered over
-        animation: google.maps.Animation.DROP,
+        animation: google.maps.Animation.DROP, //or BOUNCE
     });
 
     const infowindow = new google.maps.InfoWindow({
@@ -86,7 +105,13 @@ const map = new google.maps.Map(document.getElementById("map"), {
         infowindow.open(map, marker);
         InfoObj[0] = infowindow;
     });
-    }
+
+  marker.addListener("click", () => {
+    map.setZoom(15);
+    map.setCenter(marker.getPosition());
+  });
+
+}
 
     function closeOtherInfo() {
         if (InfoObj.length > 0) {
@@ -95,4 +120,5 @@ const map = new google.maps.Map(document.getElementById("map"), {
           InfoObj.length = 0;
         }
     }
+
 }
