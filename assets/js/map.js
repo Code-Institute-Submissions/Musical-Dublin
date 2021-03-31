@@ -25,12 +25,38 @@ const map = new google.maps.Map(document.getElementById("map"), {
           {"name": "McNeela", "lat": 53.394518, "lng": -6.145391, "information": "McNeela...."}, //McNeela Irish Music Instruments
     ];
     
+   var InfoObj = [];
+
     //Loop over and insert myCoordinates onto map & name of venue
     for (let i = 0; i < myCoordinates.length; i++) {
-        new google.maps.Marker({
+        const contentString = '<h3>' + myCoordinates[i].name + '</h3>' + 
+                         '<p>' + myCoordinates[i].information + '</p>' +
+                         '<a href="https://developers.google.com/maps/documentation/javascript/overview">' + "Click Here" + '</a>';
+     
+        const marker = new google.maps.Marker({
         position: new google.maps.LatLng(myCoordinates[i].lat, myCoordinates[i].lng),
         map: map,  //This is the map that the markers will be attached to, the value is the variable "map"
-        title: myCoordinates[i].name //Will add business name when icon is hovered over
+        title: myCoordinates[i].name, //Will add business name when icon is hovered over
+        animation: google.maps.Animation.DROP,
     });
+
+    const infowindow = new google.maps.InfoWindow({
+        content: contentString,
+        maxWidth: 500
+    });
+
+    marker.addListener("click", function(){
+        closeOtherInfo();
+        infowindow.open(map, marker);
+        InfoObj[0] = infowindow;
+    });
+    }
+
+    function closeOtherInfo() {
+        if (InfoObj.length > 0) {
+          InfoObj[0].set("marker", null);
+          InfoObj[0].close();
+          InfoObj.length = 0;
+        }
     }
 }
