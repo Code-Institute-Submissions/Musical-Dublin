@@ -9,20 +9,20 @@ const map = new google.maps.Map(document.getElementById("map"), {
 
 
   // Add custom markers to the map
-  /*
-  const iconBase = "https://maps.google.com/mapfiles/kml/"
+  
+  /* const iconBase = "https://www.flaticon.com/free-icon/"
 
   const customIcons = {
       education: {
-        icon: iconBase + "paddle/wht-blank.png",
+        icon: iconBase + "college-graduation_70035?related_id=70035",
       },
       shops: {
-          icon: iconBase + "paddle/blu-blank.png",
+          icon: iconBase + "shopping-cart_1170627?related_id=1170627",
       },
       venues: {
-          icon: iconBase + "paddle/purple-blank.png",
+          icon: iconBase + "music_876817?term=music&page=1&position=3&page=1&position=3&related_id=876817&origin=tag",
       },
-  };*/
+  }; */
 
    // List of all marker coordinates inserted on the map 
       const myCoordinates = [
@@ -113,7 +113,7 @@ const map = new google.maps.Map(document.getElementById("map"), {
         map: map,  //This is the map that the markers will be attached to, the value is the variable "map"
         title: myCoordinates[i].name, //Will add business name when icon is hovered over
         animation: google.maps.Animation.DROP, //or BOUNCE
-        //icon: customIcons[myCoordinates[i].type].icon,
+        // icon: customIcons[myCoordinates[i].type].icon,
     });
 
     const infowindow = new google.maps.InfoWindow({
