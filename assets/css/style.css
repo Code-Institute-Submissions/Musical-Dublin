@@ -167,6 +167,29 @@
     height: 600px;
 }
 
+.info-window-header {
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: "Permanent marker", sans-serif;
+    color: #034078;
+}
+
+.info-window-p {
+    font-size: 1rem;
+    text-align: left;
+    font-family: "Alegreya", sans-serif;  
+    color: #001F54;
+}
+
+.info-window-a {
+    text-decoration: none;
+    color: #1282A2;
+}
+
+.info-window-a:hover {
+    text-decoration: underline;
+    color: #001F54;
+}
 /*.border {
     border: 1.5px solid #1282A2;
 }*/
