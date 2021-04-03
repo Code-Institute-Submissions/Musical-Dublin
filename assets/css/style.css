@@ -195,9 +195,11 @@
     text-decoration: underline;
     color: #001F54;
 }
-/*.border {
-    border: 1.5px solid #1282A2;
-}*/
+
+#error {
+    font-family: "Alegreya", sans-serif;
+    color: #FF0000;
+}
 
 /*---------------------------------------------Footer*/
 
