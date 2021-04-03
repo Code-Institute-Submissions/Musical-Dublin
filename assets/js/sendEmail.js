@@ -15,7 +15,7 @@ function sendMail(contactForm) {
 }
 
 
-// Form validation code largely taken from Web Dev Simplified on YouTube, and modified for this project. Video credited in README file.
+// Form validation code largely taken from Web Dev Simplified on YouTube, and modified in this project. Video credited in README file.
 const listing = document.getElementById('textarea');
 const form = document.getElementById('form');
 const errorDisplay = document.getElementById('error');
@@ -28,5 +28,7 @@ form.addEventListener("submit", (e) => {
     if (errorMessage.length > 0){
     e.preventDefault();
     errorDisplay.innerText = errorMessage
+    } else if(errorMessage.length <= 0) {
+        alert("We have received your listing. Thank you, we will reply shortly.")
     }
 })

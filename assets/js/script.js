@@ -1,14 +1,5 @@
-/* let images = document.getElementsByTagName("img");
-for (let image of images) {
-    image.addEventListener("click", function(){
-        if (this.getAttribute("data-type") === "venues") {
-            venues;
-        }
-    });
-} */
-
 // This code will load the Venues information as the default info displayed upon site loading.
- $(document).ready(function(){
+$(document).ready(function(){
 $(".concert-hall").show(function(){
     $(".venues-drop").html(`
     <h2 class="heading-left">Venues</h2>
