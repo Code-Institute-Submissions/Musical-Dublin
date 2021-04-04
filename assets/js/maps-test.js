@@ -322,6 +322,14 @@ function shopsLocations(){
     }
 }
 
+function clearMarkers() {
+  setMapOnAll(null);
+}
+
+function showMarkers() {
+  setMapOnAll(map);
+}
+
 $(document).ready(function(){
 $(".concert-hall").show(function(){
     $(".venues-drop").html(`
@@ -337,7 +345,7 @@ $(".concert-hall").show(function(){
     <li><a href="https://www.arthurspub.ie" target="_blank" class="list">Arthurs, Blues & Jazz club</a></li>
     </ul>
     `);
-    venuesLocations();
+   venuesLocations();
 })
 }); 
 
@@ -355,7 +363,7 @@ $(".concert-hall").click(function(){
     <li><a href="https://www.arthurspub.ie" target="_blank" class="list">Arthurs, Blues & Jazz club</a></li>
     </ul>
     `);
-    venuesLocations();
+   venuesLocations();
 });
 
 
@@ -387,7 +395,7 @@ $(".shops").click(function(){
     <li><h5 class="headers-below">Tradional Irish</h5></li>
     <li><a href="https://www.mcneelamusic.com" target="_blank" class="list">McNeela Music Instruments</a></li>
     </ul>`);
-    shopsLocations();
+   shopsLocations();
 });
 
   function closeOtherInfo() {
