@@ -28,7 +28,7 @@ form.addEventListener("submit", (e) => {
     if (errorMessage.length > 0){
     e.preventDefault();
     errorDisplay.innerText = errorMessage
-    } else if(errorMessage.length <= 0) {
+    } else if (errorMessage.length <= 0) {
         alert("We have received your listing. Thank you, we will reply shortly.")
     }
 })
