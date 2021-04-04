@@ -236,6 +236,111 @@ function venuesLocations(){
     }
 }
 
+function educationLocations(){
+   //Loop over and insert myCoordinates onto map & name of venue & website link
+    for (let i = 0; i < eduCoords.length; i++) {
+        const contentString =
+            '<h3 class="info-window-header">' +
+            eduCoords[i].name +
+            "</h3>" +
+            '<p class="info-window-p">' +
+            eduCoords[i].information +
+            "</p>" +
+            '<p class="info-window-p">' +
+            eduCoords[i].address +
+            "</p>" +
+            '<a class="info-window-a" href="' +
+            eduCoords[i].website +
+            '"target=_blank>Website</a>';
+
+        const marker = new google.maps.Marker({
+            position: new google.maps.LatLng(eduCoords[i].lat, eduCoords[i].lng),
+            map: map, //This is the map that the markers will be attached to, the value is the variable "map"
+            title: eduCoords[i].name, //Will add business name when icon is hovered over
+            animation: google.maps.Animation.DROP, //or BOUNCE
+            // icon: customIcons[myCoordinates[i].type].icon,
+        });
+
+        const infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 500,
+        });
+
+        marker.addListener("click", function () {
+            closeOtherInfo();
+            infowindow.open(map, marker);
+            InfoObj[0] = infowindow;
+        });
+
+        marker.addListener("click", () => {
+            map.setZoom(15);
+            map.setCenter(marker.getPosition());
+        });
+    }
+}
+
+function shopsLocations(){
+   //Loop over and insert myCoordinates onto map & name of venue & website link
+    for (let i = 0; i < shopCoords.length; i++) {
+        const contentString =
+            '<h3 class="info-window-header">' +
+            shopCoords[i].name +
+            "</h3>" +
+            '<p class="info-window-p">' +
+            shopCoords[i].information +
+            "</p>" +
+            '<p class="info-window-p">' +
+            shopCoords[i].address +
+            "</p>" +
+            '<a class="info-window-a" href="' +
+            shopCoords[i].website +
+            '"target=_blank>Website</a>';
+
+        const marker = new google.maps.Marker({
+            position: new google.maps.LatLng(shopCoords[i].lat, shopCoords[i].lng),
+            map: map, //This is the map that the markers will be attached to, the value is the variable "map"
+            title: shopCoords[i].name, //Will add business name when icon is hovered over
+            animation: google.maps.Animation.DROP, //or BOUNCE
+            // icon: customIcons[myCoordinates[i].type].icon,
+        });
+
+        const infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 500,
+        });
+
+        marker.addListener("click", function () {
+            closeOtherInfo();
+            infowindow.open(map, marker);
+            InfoObj[0] = infowindow;
+        });
+
+        marker.addListener("click", () => {
+            map.setZoom(15);
+            map.setCenter(marker.getPosition());
+        });
+    }
+}
+
+$(document).ready(function(){
+$(".concert-hall").show(function(){
+    $(".venues-drop").html(`
+    <h2 class="heading-left">Venues</h2>
+    <ul>
+    <li><h5 class="headers-below">Classical</h5></li>
+    <li><a href="https://www.nch.ie" target="_blank" class="list">The National Concert Hall (NCH)</a></li>
+    <li><h5 class="headers-below">Rock & Pop</h5></li>
+    <li><a href="https://www.vicarstreet.com" target="_blank" class="list">Vicar Street</a></li>
+    <li><a href="https://www.theacademydublin.com" target="_blank" class="list">The Academy</a></li>
+    <li><a href="https://www.3arena.ie" target="_blank" class="list">Three Arena</a></li>
+    <li><h5 class="headers-below">Jazz & Blues</h5></li>
+    <li><a href="https://www.arthurspub.ie" target="_blank" class="list">Arthurs, Blues & Jazz club</a></li>
+    </ul>
+    `);
+    venuesLocations();
+})
+}); 
+
 $(".concert-hall").click(function(){
     $(".venues-drop").html(`
     <h2 class="heading-left">Venues</h2>
@@ -253,6 +358,37 @@ $(".concert-hall").click(function(){
     venuesLocations();
 });
 
+
+$(".education").click(function(){
+    $(".venues-drop").html(`
+    <h2 class="heading-left">Education</h2>
+    <ul>
+    <li><h5 class="headers-below">Jazz</h5></li>
+    <li><a href="https://www.newparkmusic.ie" target="_blank" class="list">Newpark Music Centre</a></li>
+    <li><h5 class="headers-below">Classical</h5></li>
+    <li><a href="https://www.ucd.ie/music/" target="_blank" class="list">UCD</a></li>
+    <li><h5 class="headers-below">Rock & Pop Performance</h5></li>
+    <li><a href="https://www.bimm.ie" target="_blank" class="list">BIMM</a></li>
+    <li><a href="https://www.rockjam.ie" target="_blank" class="list">Rock Jam</a></li>
+    <li><a href="https://www.rockschool.ie" target="_blank" class="list">Rock School</a></li>
+    </ul>`);
+    educationLocations();
+});
+
+$(".shops").click(function(){
+    $(".venues-drop").html(`
+    <h2 class="heading-left">Shops</h2>
+    <ul>
+    <li><h5 class="headers-below">General Music Stores</h5></li>
+    <li><a href="https://www.xmusic.ie" target="_blank" class="list">Xmusic</a></li>
+    <li><a href="https://www.musicmaker.ie" target="_blank" class="list">Music Maker</a></li>
+    <li><a href="https://www.waltons.ie/home/our-stores/" target="_blank" class="list">Waltons Music</a></li>
+    <li><a href="https://www.goodwinsmusic.ie" target="_blank" class="list">Goodwins Music</a></li>
+    <li><h5 class="headers-below">Tradional Irish</h5></li>
+    <li><a href="https://www.mcneelamusic.com" target="_blank" class="list">McNeela Music Instruments</a></li>
+    </ul>`);
+    shopsLocations();
+});
 
   function closeOtherInfo() {
         if (InfoObj.length > 0) {
