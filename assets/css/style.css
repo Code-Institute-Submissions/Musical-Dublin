@@ -196,9 +196,17 @@
     color: #001F54;
 }
 
+.border-images {
+    border: 2px solid #FF0800;
+}
+
+.image-border {
+    border: 2px solid #034078;
+}
+
 #error {
     font-family: "Alegreya", sans-serif;
-    color: #FF0000;
+    color: #FF0800;
     font-size: 1.25rem;
 }
 
