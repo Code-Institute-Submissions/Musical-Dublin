@@ -10,7 +10,7 @@ $(document).ready(function() {
         $('#edu, #shop').removeClass('border-images');
         $('#edu, #shop').addClass('image-border');
          $('#hall').removeClass('image-border');
-    })
+    });
 
     $('#edu').click(function() {
         $(this).addClass('border-images');

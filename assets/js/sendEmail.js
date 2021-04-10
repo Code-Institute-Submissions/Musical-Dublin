@@ -2,7 +2,7 @@ function sendMail(contactForm) {
     emailjs.send("service_pow46zn", "template_y96c8bc", {"from_name": contactForm.name.value,
 "from_email": contactForm.emailaddress.value,
 "listing": contactForm.listing.value
-})
+});
 /*.then(
     function(response){
         console.log("EMAIL SEND SUCCESS", response);
@@ -26,16 +26,16 @@ document.getElementById('name').focus();
 form.addEventListener("submit", (e) => {
     let errorMessage = [];  //This array will hold any error messages
     if (listing.value === '' || listing.value == null) {
-        errorMessage.push('Please supply full details of your business including owners, address, website and/or social media links.')
+        errorMessage.push('Please supply full details of your business including owners, address, website and/or social media links.');
     }
     if (errorMessage.length > 0){
     e.preventDefault();
-    errorDisplay.innerText = errorMessage
+    errorDisplay.innerText = errorMessage;
     } else if (errorMessage.length <= 0) {
-        alert("We have received your listing. Thank you, we will reply shortly.")
+        alert("We have received your listing. Thank you, we will reply shortly.");
     }
 
     
-})
+});
 
 
