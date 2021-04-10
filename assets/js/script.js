@@ -75,8 +75,8 @@ $(".shops").click(function(){
 });
 
 
-
-
-
-
 }); 
+
+
+
+

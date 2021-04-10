@@ -19,6 +19,9 @@ function sendMail(contactForm) {
 const listing = document.getElementById('textarea');
 const form = document.getElementById('form');
 const errorDisplay = document.getElementById('error');
+// Have by default, the cursor already in the name input on the contact page.
+document.getElementById('name').focus();
+
 
 form.addEventListener("submit", (e) => {
     let errorMessage = [];  //This array will hold any error messages
@@ -31,4 +34,8 @@ form.addEventListener("submit", (e) => {
     } else if (errorMessage.length <= 0) {
         alert("We have received your listing. Thank you, we will reply shortly.")
     }
+
+    
 })
+
+
