@@ -1,6 +1,12 @@
 # Musical Dublin
-This site is intended as a go to site for both Irish people living in or visiting Dublin or tourists to get a comprehensive list of musical 
-venues, education facilities and music shops in the city.
+This site is intended as a source for music fans to get a comprehensive list of musical venues, education facilities and music shops in the 
+Irish capital. It is intended also to let users know of upcoming events in the city.
+
+# User Stories
+As a first time user of the site, I want to:
+1. Find a list of music venues, education facilities and shops in the Dublin area.
+2. Find the addresses of these businesses as well as find their locations on a Google map.
+3. Find out about upcoming events in the city.
 
 
 
@@ -9,15 +15,11 @@ venues, education facilities and music shops in the city.
 * Font Type:
 1. The font chosen for the headings on the site is the 'Permanent Marker' font from Google fonts. This was chosen as it has a playful 
 and non-formal look to it, suitable for a site dedicated to music. I felt it would be welcoming to the diverse usership that this site
-is aimed at, at least more than for example, the [Blabbermouth](https://www.blabbermouth.net) logo font which is an obvious choice for a site
-dedicated to heavy metal music and aimed mainly at fans of the genre. A fallback font of sans-serif is included in case a browser cannot load the Permanent Marker font. 
+is aimed at, more so than a typical font for an Irish traditional website for example, like [ITMA](https://www.itma.ie/). A fallback font of sans-serif is included in case a browser cannot load the Permanent Marker font. 
 2. The font chosen for all other text on the site is 'Alegreya' from Google Fonts with a fallback font of sans-serif. This was chosen for 
 its easy readability.
 * Colour Scheme:
-1. As this is a site focusing on musical activity within the Dublin area, I decided on a combination of blue colours similar to the Dublin County
-flag. Four blue variants are used, these are Oxford Blue(#0A1128), Royal Blue(#001F54), Indigo Dye(#034078) and Celadon Blue(#1282A2).
-The white colour, #FEFCFB, was used in the site because the Dublin GAA alternative jersey is a similar white colour and it contrasted with the 
-other colours well. 
+1. As this is a site focusing on musical activity within the Dublin area, I decided on a combination of blue colours similar to the Dublin County flag. Five blue variants are used, these are Oxford Blue(#0A1128), Royal Blue(#001F54), Indigo Dye(#034078), Twitter Blue(#1da1f2) and Celadon Blue(#1282A2). White is the sixth colour which is also a colour associated with the county.
 2. The colours were generated on an app called [Coolors](https://www.coolors.co) which gives five-colour lists of colours
 that compliment each other well. I had the above reasons in mind when I decided on the particular list that I used.
 * Images:
@@ -25,9 +27,18 @@ that compliment each other well. I had the above reasons in mind when I decided 
 
 
 
-#Debugging
-1. I could not get the Google map to render on the screen. I then commented out an asterisk in my CSS file that set the entire 
-sites background-color to #fefcfb, and this worked to render the map on screen.
+# Debugging
+1. I could not get the Google map to render on the screen. After exhausting options including re-writing the code to make sure I had it correct, and checking against the documentation on the Google maps website, I finally decided to comment out an asterisk in the css file
+which changed the background-color of the entire site to #fefcfb, a variant of white. This worked and the map while using the same code, rendered on the site. 
+
+
+ 
+
+
+
+
+
+
 
 
 ## Credits
