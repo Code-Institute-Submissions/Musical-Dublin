@@ -43,7 +43,7 @@ $(document).ready(function() {
     <li><a href="https://www.arthurspub.ie" target="_blank" class="list">Arthurs, Blues & Jazz club</a></li>
     </ul>
     `);
-   venuesLocations();
+   // venuesLocations();
 }); 
 
 $(".education").click(function(){
@@ -59,7 +59,7 @@ $(".education").click(function(){
     <li><a href="https://www.rockjam.ie" target="_blank" class="list">Rock Jam</a></li>
     <li><a href="https://www.rockschool.ie" target="_blank" class="list">Rock School</a></li>
     </ul>`);
-    educationLocations();
+    // educationLocations();
 });
 
 $(".shops").click(function(){
@@ -74,7 +74,7 @@ $(".shops").click(function(){
     <li><h5 class="headers-below">Tradional Irish</h5></li>
     <li><a href="https://www.mcneelamusic.com" target="_blank" class="list">McNeela Music Instruments</a></li>
     </ul>`);
-   shopsLocations();
+   // shopsLocations();
 });
 
 
