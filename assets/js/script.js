@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // Add borders and active border to index.html images
     $('#hall').show(function() {
         $(this).addClass("border-images");
         $('#edu, #shop').addClass('image-border');
@@ -26,8 +27,10 @@ $(document).ready(function() {
           $('#shop').removeClass('image-border');
     });
 
-$(".concert-hall").click(function(){
-    $(".venues-mob-drop").html(`
+
+    // Allow user to open & close drop downs on mobile view, also enter html into a different div located underneath each image
+ $(".concert-hall").click(function(){
+    $(".venues-mob-drop").slideToggle().html(`
     <h2 class="heading-left">Venues</h2>
     <ul>
     <li><h5 class="headers-below">Classical</h5></li>
@@ -41,10 +44,10 @@ $(".concert-hall").click(function(){
     </ul>
     `);
    venuesLocations();
-});
+}); 
 
 $(".education").click(function(){
-    $(".edu-mob-drop").html(`
+    $(".edu-mob-drop").slideToggle().html(`
     <h2 class="heading-left">Education</h2>
     <ul>
     <li><h5 class="headers-below">Jazz</h5></li>
@@ -60,7 +63,7 @@ $(".education").click(function(){
 });
 
 $(".shops").click(function(){
-    $(".shops-mob-drop").html(`
+    $(".shops-mob-drop").slideToggle().html(`
     <h2 class="heading-left">Shops</h2>
     <ul>
     <li><h5 class="headers-below">General Music Stores</h5></li>
@@ -75,7 +78,32 @@ $(".shops").click(function(){
 });
 
 
-}); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
 
 
 
