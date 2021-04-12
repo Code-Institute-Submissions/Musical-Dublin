@@ -362,6 +362,7 @@ $(".concert-hall").show(function(){
 })
 }); 
 
+
 $(".concert-hall").click(function(){
     $(".venues-drop").html(`
     <h2 class="heading-left">Venues</h2>
@@ -379,7 +380,6 @@ $(".concert-hall").click(function(){
    clearCoords();
    venuesLocations();
 });
-
 
 $(".education").click(function(){
     $(".venues-drop").html(`

@@ -30,6 +30,11 @@ that compliment each other well. I had the above reasons in mind when I decided 
 # Debugging
 1. I could not get the Google map to render on the screen. After exhausting options including re-writing the code to make sure I had it correct, and checking against the documentation on the Google maps website, I finally decided to comment out an asterisk in the css file
 which changed the background-color of the entire site to #fefcfb, a variant of white. This worked and the map while using the same code, rendered on the site. 
+2. I tried a number of different ways of connecting the map markers on the map to the image clicked, i.e the Venues, Education or Shops
+images. I wanted only the shop markers to show when the shop image was clicked and the same for the other two images. My first attempt was
+to add 'marker.setMap(null);' in the jQuery image click event before where I invoked the function to set the markers on the map, i.e venuesLocations() etc. in the maps.js file. That only cleared all the markers so next I added an empty array to each function (venuesLocations etc.) . Finally I decided to add all the markers in each funtion to the empty array 'businessCoords' then loop through them in the function clearCoords. After that I invoked the clearCoords function before the venuesLocations etc., functions and that worked
+to match the images to the specific markers on the map.
+
 
 
  
