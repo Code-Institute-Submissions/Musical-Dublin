@@ -335,7 +335,7 @@ function shopsLocations(){
 }
 
 
-
+// Function to clear all coordinates on the map, before relevant markers are shown relative to button clicked
 function clearCoords() {
     for (let i = 0; i < businessCoords.length; i++) {
         businessCoords[i].setMap(null);
