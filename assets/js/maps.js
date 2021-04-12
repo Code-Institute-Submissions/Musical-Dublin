@@ -1,13 +1,14 @@
-const dublinCity = { lat: 53.35014, lng: -6.255155 }; //The coordinates of Dublin City Centre
+//The coordinates of Dublin City Centre
+const dublinCity = { lat: 53.35014, lng: -6.255155 };
 
-//Create the map and give it a default position
+//Create the map and give it the default position of Dublin City Centre
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 12,
         center: dublinCity,
     });
 
-    // List of all marker coordinates inserted on the map
+// List of all venue marker coordinates inserted on the map
 const venuesCoords = [
         {//National Concert Hall
             address: "Address:<br> Earlsfort Terrace,<br> Dublin 2.",
@@ -75,6 +76,7 @@ const venuesCoords = [
         },
     ]
     
+// List of all education marker coordinates inserted on the map
 const eduCoords = [
         { //Newpark Music Centre & Rock Jam(Also held in Newpark Music Centre)
             address: "Address:<br> Newtown Park Avenue<br> Blackrock<br> Co. Dublin",
@@ -130,6 +132,7 @@ const eduCoords = [
                           hour long classes.`,
         }]
  
+// List of all shop marker coordinates inserted on the map
 const shopCoords = [
         {//XMusic
             address: "Address:<br> Red Cow Retail Center,<br>Ballymount,<br>Dublin 22.",
@@ -193,8 +196,11 @@ const shopCoords = [
 
     var InfoObj = [];
 
+// Empty array to hold all markers. This will then be passed to the clearCoords() function below as a way of clearing the map and entering only the relevant markers.
+    var businessCoords = [];
+
+//Loop over and insert venues markers onto map & name of venue & website link
 function venuesLocations(){
-   //Loop over and insert myCoordinates onto map & name of venue & website link
     for (let i = 0; i < venuesCoords.length; i++) {
         const contentString =
             '<h3 class="info-window-header">' +
@@ -218,6 +224,8 @@ function venuesLocations(){
             // icon: customIcons[myCoordinates[i].type].icon,
         });
 
+        businessCoords.push(marker);
+
         const infowindow = new google.maps.InfoWindow({
             content: contentString,
             maxWidth: 500,
@@ -236,8 +244,8 @@ function venuesLocations(){
     }
 }
 
+//Loop over and insert education markers onto map & name of education facility & website link
 function educationLocations(){
-   //Loop over and insert myCoordinates onto map & name of venue & website link
     for (let i = 0; i < eduCoords.length; i++) {
         const contentString =
             '<h3 class="info-window-header">' +
@@ -261,6 +269,8 @@ function educationLocations(){
             // icon: customIcons[myCoordinates[i].type].icon,
         });
 
+        businessCoords.push(marker);
+
         const infowindow = new google.maps.InfoWindow({
             content: contentString,
             maxWidth: 500,
@@ -279,8 +289,8 @@ function educationLocations(){
     }
 }
 
+//Loop over and insert shops markers onto map & name of shop & website link
 function shopsLocations(){
-   //Loop over and insert myCoordinates onto map & name of venue & website link
     for (let i = 0; i < shopCoords.length; i++) {
         const contentString =
             '<h3 class="info-window-header">' +
@@ -304,6 +314,8 @@ function shopsLocations(){
             // icon: customIcons[myCoordinates[i].type].icon,
         });
 
+        businessCoords.push(marker);
+
         const infowindow = new google.maps.InfoWindow({
             content: contentString,
             maxWidth: 500,
@@ -322,13 +334,13 @@ function shopsLocations(){
     }
 }
 
-function clearMarkers() {
-  setMapOnAll(null);
-}
 
-function showMarkers() {
-  setMapOnAll(map);
-}
+
+function clearCoords() {
+    for (let i = 0; i < businessCoords.length; i++) {
+        businessCoords[i].setMap(null);
+    }
+};
 
 $(document).ready(function(){
 $(".concert-hall").show(function(){
@@ -345,6 +357,7 @@ $(".concert-hall").show(function(){
     <li><a href="https://www.arthurspub.ie" target="_blank" class="list">Arthurs, Blues & Jazz club</a></li>
     </ul>
     `);
+   clearCoords();
    venuesLocations();
 })
 }); 
@@ -363,6 +376,7 @@ $(".concert-hall").click(function(){
     <li><a href="https://www.arthurspub.ie" target="_blank" class="list">Arthurs, Blues & Jazz club</a></li>
     </ul>
     `);
+   clearCoords();
    venuesLocations();
 });
 
@@ -380,6 +394,7 @@ $(".education").click(function(){
     <li><a href="https://www.rockjam.ie" target="_blank" class="list">Rock Jam</a></li>
     <li><a href="https://www.rockschool.ie" target="_blank" class="list">Rock School</a></li>
     </ul>`);
+    clearCoords();
     educationLocations();
 });
 
@@ -395,6 +410,7 @@ $(".shops").click(function(){
     <li><h5 class="headers-below">Tradional Irish</h5></li>
     <li><a href="https://www.mcneelamusic.com" target="_blank" class="list">McNeela Music Instruments</a></li>
     </ul>`);
+   clearCoords();
    shopsLocations();
 });
 
