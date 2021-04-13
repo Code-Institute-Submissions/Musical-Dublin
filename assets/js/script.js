@@ -87,7 +87,7 @@ $(document).ready(function() {
         $('#hall, #edu').addClass('image-border');
         $('#shop').removeClass('image-border');
     });
-
+});
 
     // Allow user to open & close drop downs on mobile view, also enter html into a different div located underneath each image
  /*$(".concert-hall").click(function(){
@@ -146,6 +146,17 @@ $(".shops").click(function(){
 
 
 
+function getInfo() {
+    fetch("https://app.ticketmaster.com/discovery/v2/events.json?keyword=deftones&apikey=6UVAl4kH2qy1pxo2XkYN6ZAIgLJIX3SK")
+        .then(response => response.json()) //These are the promises to return response in JSON format
+        .then((data) => sortInfo(data));
+}
+
+document.getElementById('apibtn').addEventListener('click', getInfo);
+
+function sortInfo(events) {
+    console.log(events);
+    }
 
 
 
@@ -158,14 +169,6 @@ $(".shops").click(function(){
 
 
 
-
-
-
-
-
-
-
-});
 
 
 
