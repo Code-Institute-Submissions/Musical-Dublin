@@ -1,5 +1,5 @@
+//On Mobile view, this will have the venues drop-down load automatically and give it an active border class. 
 $(document).ready(function() {
-    // Add borders and active border to index.html images
     $('#hall').show(function() {
         $(this).addClass("border-images");
         $(".edu-mob-drop").hide();
@@ -20,6 +20,10 @@ $(document).ready(function() {
         $('#edu, #shop').addClass('image-border');
         $('#hall').removeClass('image-border');
     });
+
+    /*The below 3 functions both add an active border to a clicked image and 
+    have the drop-down info show below the image, while closing any other drop-downs if open.
+    Also an inactive border class is added to the unclicked photos*/
 
     $('#hall').click(function(){
         $(this).addClass('border-images');

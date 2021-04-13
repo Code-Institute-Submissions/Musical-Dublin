@@ -1,3 +1,5 @@
+// Code for google map taken from the Google maps api documentation and then modified for this project
+
 //The coordinates of Dublin City Centre
 const dublinCity = { lat: 53.35014, lng: -6.255155 };
 
@@ -196,10 +198,12 @@ const shopCoords = [
 
     var InfoObj = [];
 
-// Empty array to hold all markers. This will then be passed to the clearCoords() function below as a way of clearing the map and entering only the relevant markers.
+/* Empty array to hold all markers. This will then be looped through in the clearCoords() 
+function below as a way of clearing the map and entering only the relevant markers when certain images
+are clicked. */
     var businessCoords = [];
 
-//Loop over and insert venues markers onto map & name of venue & website link
+/*Function to loop over the venues coordinates to be invoked later*/
 function venuesLocations(){
     for (let i = 0; i < venuesCoords.length; i++) {
         const contentString =
@@ -244,7 +248,7 @@ function venuesLocations(){
     }
 }
 
-//Loop over and insert education markers onto map & name of education facility & website link
+/*Function to loop over the education coordinates to be invoked later*/
 function educationLocations(){
     for (let i = 0; i < eduCoords.length; i++) {
         const contentString =
@@ -289,7 +293,7 @@ function educationLocations(){
     }
 }
 
-//Loop over and insert shops markers onto map & name of shop & website link
+/*Function to loop over the shops coordinates to be invoked later*/
 function shopsLocations(){
     for (let i = 0; i < shopCoords.length; i++) {
         const contentString =
@@ -342,6 +346,7 @@ function clearCoords() {
     }
 };
 
+// Below function loads the venues info by default upon screen-load and gives the venues image an active border
 $(document).ready(function(){
 $(".concert-hall").show(function(){
     $(".venues-drop").html(`
@@ -363,6 +368,8 @@ $(".concert-hall").show(function(){
 }); 
 
 
+/*Below three functions load info relative to a clicked image as well as load map markers relative to the image and info.
+Also they clear any markers that were present before the new image was clicked*/
 $(".concert-hall").click(function(){
     $(".venues-drop").html(`
     <h2 class="heading-left">Venues</h2>
