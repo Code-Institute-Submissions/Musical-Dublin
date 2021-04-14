@@ -45,7 +45,11 @@
 .jumbotron {
     height: 500px;
     width: 100%;
-    background-color: #D8D8D8;  /* #fefcfb */
+    background-image: url("/assets/images/temple-bar-2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    /* background-color: #D8D8D8; */
     border-left: .5px solid #1282A2;
     border-bottom: .5px solid #1282A2;
     border-right: .5px solid #1282A2;
@@ -83,6 +87,15 @@
     margin-bottom: 25px;
     text-align: center;
     color: #034078;
+}
+
+.heading-index {
+    font-family: "Permanent marker", sans-serif;
+    font-size: 3.5rem;
+    margin-top: 0px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #fefcfb;
 }
 
 .heading-alter {
@@ -127,6 +140,15 @@
     font-weight: 500;
    font-size: 1.25rem;
    color: #034078;
+   margin-left: 10px;
+   margin-right: 10px;
+}
+
+.normal-text-index {
+    font-family: "Alegreya", sans-serif;
+    font-weight: 500;
+   font-size: 1.25rem;
+   color: #fefcfb;
    margin-left: 10px;
    margin-right: 10px;
 }
