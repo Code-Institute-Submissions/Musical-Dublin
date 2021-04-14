@@ -46,6 +46,7 @@
     height: 500px;
     width: 100%;
     background-image: url("/assets/images/temple-bar-2.jpg");
+    opacity: 0.8;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -54,31 +55,6 @@
     border-bottom: .5px solid #1282A2;
     border-right: .5px solid #1282A2;
 }
-
-/*#image-text-outer {
-    position: relative;
-    height: 700px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.image-index {
- height:700px;
- width: 100%;
-}
-
-.text-overlay {
-    height: 600px;
-    width: 600px;
-    background-color: rgba(254, 252, 251, 0.9);
-    position: absolute;
-    top: 65px;
-    bottom: 25%;
-    left: 410px;
-    border-radius: 15px;
-    text-align: center;
-    
-}*/
 
 .heading {
     font-family: "Permanent marker", sans-serif;
@@ -95,7 +71,7 @@
     margin-top: 0px;
     margin-bottom: 25px;
     text-align: center;
-    color: #fefcfb;
+    color: #034078;
 }
 
 .heading-alter {
@@ -103,6 +79,12 @@
     font-size: 3.5rem;
     margin-top: 2rem;
     margin-bottom: 25px;
+    text-align: center;
+    color: #034078;
+}
+
+.image-info {
+    font-family: "Alegreya", sans-serif;
     text-align: center;
     color: #034078;
 }
@@ -148,7 +130,7 @@
     font-family: "Alegreya", sans-serif;
     font-weight: 500;
    font-size: 1.25rem;
-   color: #fefcfb;
+   color: #fff;
    margin-left: 10px;
    margin-right: 10px;
 }
