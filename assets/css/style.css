@@ -60,11 +60,11 @@
  /* background-color: #D8D8D8; */
 
 .hero-image {
-    background-image: url("/assets/images/temple-bar-2.jpg");
+    background-image: url("/assets/images/bridge.jpg");
     opacity: 0.9; 
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: bottom;
+    background-position: top; /* bottom*/
 }
 
 .heading {
@@ -270,7 +270,6 @@ footer {
 .about-text {
     font-family: "Alegreya", sans-serif;
     font-size: 1.1rem;
-   
 }
 
 ul {
@@ -298,23 +297,6 @@ ul li {
 }
 
 /*---------------------------------------------main.html*/
-
-/*.js-target1 {
-    background-color: green;
-}
-
-.js-target2 {
-    background-color: white;
-}
-
-.js-target3 {
-    background-color: orange;
-}
-
-.js-container {
-    height: 200px;
-    width: 100%;
-}*/
 
 .heading3 {
     font-family: "Permanent marker", sans-serif;
