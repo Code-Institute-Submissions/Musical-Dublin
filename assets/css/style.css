@@ -235,8 +235,7 @@
 /*---------------------------------------------Footer*/
 
 footer {
-    height: 175px;   /* 120px */
-    /*border-top: 1px solid #034078;*/
+    height: 175px;   /* 175px */
     margin-top: 32px;
     background-color: #0A1128;
 }
@@ -392,6 +391,10 @@ form {
     text-align: center; 
 }
 
+footer {
+    height: 289px;   
+}
+
 ul {
     margin-top: 10px;
 }
@@ -435,6 +438,10 @@ ul {
   border: 1px solid #034078;
   border-left: 0;
   border-right: 0;
+}
+
+footer {
+    height: 289px;   
 }
 
 }
@@ -553,6 +560,16 @@ ul {
        height: 700px;
     border: 1px solid #034078;
  }
+
+ footer {
+    height: 265px;   
+}
+}
+
+@media only screen and (min-width: 577px) {
+    footer {
+        height: 204px;   
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -573,6 +590,10 @@ ul {
        height: 650px;
     border: 1px solid #034078;
  }
+
+ footer {
+    height: 173px;   
+}
 }
 
 @media only screen and (min-width: 1000px) {
@@ -594,5 +615,9 @@ ul {
        height: 550px;
     border: 1px solid #034078;
  }
+
+ footer {
+    height: 173px;   
+}
 }
 

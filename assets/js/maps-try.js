@@ -1,7 +1,8 @@
 // Code for google map taken from the Google maps api documentation and then modified for this project
 
-// List of all venue marker coordinates inserted on the map
-const venuesCoords = [
+// List of all markers to be inserted on the map
+const mapCoordsByType = {
+venues: [
         {   name: "National Concert Hall",
             address: "Address:<br> Earlsfort Terrace,<br> Dublin 2.",
             website: "https://www.nch.ie/Online/default.asp",
@@ -56,11 +57,8 @@ const venuesCoords = [
                           bands. Big names to have played here include U2, Soundgarden and Queens
                           of the Stoneage. The venue also hosts a range of other types of shows
                           including kids concerts like Hannah Montana and Peppa Pig.`,
-        },
-    ]
-    
-// List of all education marker coordinates inserted on the map
-const eduCoords = [
+        }],
+education: [
         {   name: "Newpark/Rock Jam",
             address: "Address:<br> Newtown Park Avenue<br> Blackrock<br> Co. Dublin",
             website: "https://www.newparkmusic.ie/",
@@ -106,10 +104,8 @@ const eduCoords = [
                           on all instruments. Lessons are conducted
                           in a one to one setting ranging from 30 minute to 
                           hour long classes.`,
-        }]
- 
-// List of all shop marker coordinates inserted on the map
-const shopCoords = [
+        }],
+shops: [
         {   name: "XMusic",
             address: "Address:<br> Red Cow Retail Center,<br>Ballymount,<br>Dublin 22.",
             website: "https://www.xmusic.ie/",
@@ -158,8 +154,9 @@ const shopCoords = [
             information: `McNeela Irish Music Instruments is a recently 
                           established business specialising in traditional Irish 
                           instruments and instrument repair.`,
-        }, 
-    ];
+        }
+    ]
+}
 
     //Create the map 
     function initMap() {
@@ -169,7 +166,6 @@ const shopCoords = [
         center: { lat: 53.35014, lng: -6.255155 },
     });
 
-
     var InfoObj = [];
 
 /* Empty array to hold all markers. This will then be looped through in the clearCoords() 
@@ -178,22 +174,18 @@ are clicked. */
     var businessCoords = [];
 
 /*Function to loop over the venues coordinates to be invoked later*/
-function venuesLocations(){
-    for (let i = 0; i < venuesCoords.length; i++) {
-        const contentString =
-            '<h3 class="info-window-header">' +
-            venuesCoords[i].name +
-            "</h3>" +
-            '<p class="info-window-p">' +
-            venuesCoords[i].information +
-            "</p>" +
-            '<p class="info-window-p">' +
-            venuesCoords[i].address +
-            "</p>" +
-            '<a class="info-window-a" href="' +
-            venuesCoords[i].website +
-            '"target=_blank>Website</a>';
 
+    
+        function contentString(venuesInfo){`
+            <h3 class="info-window-header">${venuesInfo.name}</h3> 
+            <p class="info-window-p">${venuesInfo.information}</p> 
+            <p class="info-window-p">${venuesInfo.address}</p> 
+            <a class="info-window-a" href='${venuesInfo.website}' target=_blank>Website</a>`
+        }
+
+        let markerRef = null;
+
+        
         const marker = new google.maps.Marker({
             position: new google.maps.LatLng(venuesCoords[i].lat, venuesCoords[i].lng),
             map: map, //This is the map that the markers will be attached to, the value is the variable "map"
@@ -202,7 +194,6 @@ function venuesLocations(){
             // icon: customIcons[myCoordinates[i].type].icon,
         });
 
-        businessCoords.push(marker);
 
         const infowindow = new google.maps.InfoWindow({
             content: contentString,
@@ -216,92 +207,10 @@ function venuesLocations(){
             map.setZoom(15);
             map.setCenter(marker.getPosition());
         });
-    }
-}
+    
 
-/*Function to loop over the education coordinates to be invoked later*/
-function educationLocations(){
-    for (let i = 0; i < eduCoords.length; i++) {
-        const contentString =
-            '<h3 class="info-window-header">' +
-            eduCoords[i].name +
-            "</h3>" +
-            '<p class="info-window-p">' +
-            eduCoords[i].information +
-            "</p>" +
-            '<p class="info-window-p">' +
-            eduCoords[i].address +
-            "</p>" +
-            '<a class="info-window-a" href="' +
-            eduCoords[i].website +
-            '"target=_blank>Website</a>';
-
-        const marker = new google.maps.Marker({
-            position: new google.maps.LatLng(eduCoords[i].lat, eduCoords[i].lng),
-            map: map, //This is the map that the markers will be attached to, the value is the variable "map"
-            title: eduCoords[i].name, //Will add business name when icon is hovered over
-            animation: google.maps.Animation.DROP, //or BOUNCE
-            // icon: customIcons[myCoordinates[i].type].icon,
-        });
 
         businessCoords.push(marker);
-
-        const infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 500,
-        });
-
-        marker.addListener("click", function () {
-            closeOtherInfo();
-            infowindow.open(map, marker);
-            InfoObj[0] = infowindow;
-            map.setZoom(15);
-            map.setCenter(marker.getPosition());
-        });
-    }
-}
-
-/*Function to loop over the shops coordinates to be invoked later*/
-function shopsLocations(){
-    for (let i = 0; i < shopCoords.length; i++) {
-        const contentString =
-            '<h3 class="info-window-header">' +
-            shopCoords[i].name +
-            "</h3>" +
-            '<p class="info-window-p">' +
-            shopCoords[i].information +
-            "</p>" +
-            '<p class="info-window-p">' +
-            shopCoords[i].address +
-            "</p>" +
-            '<a class="info-window-a" href="' +
-            shopCoords[i].website +
-            '"target=_blank>Website</a>';
-
-        const marker = new google.maps.Marker({
-            position: new google.maps.LatLng(shopCoords[i].lat, shopCoords[i].lng),
-            map: map, //This is the map that the markers will be attached to, the value is the variable "map"
-            title: shopCoords[i].name, //Will add business name when icon is hovered over
-            animation: google.maps.Animation.DROP, //or BOUNCE
-            // icon: customIcons[myCoordinates[i].type].icon,
-        });
-
-        businessCoords.push(marker);
-
-        const infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 500,
-        });
-
-        marker.addListener("click", function () {
-            closeOtherInfo();
-            infowindow.open(map, marker);
-            InfoObj[0] = infowindow;
-            map.setZoom(15);
-            map.setCenter(marker.getPosition());
-        });
-    }
-}
 
 
 // Function to clear all coordinates on the map, before relevant markers are shown relative to button clicked
@@ -394,4 +303,3 @@ $(".shops").click(function(){
         }
     }
 }
-
