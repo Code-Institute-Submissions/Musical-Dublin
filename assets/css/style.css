@@ -45,7 +45,7 @@
 .jumbotron {
     height: 500px;
     width: 100%;
-    background-image: url("/assets/images/temple-bar-2.jpg");
+    background-image: url("/assets/images/temple-bar-2.jpg") !important;
     opacity: 0.9; 
     background-repeat: no-repeat;
     background-attachment: fixed;
