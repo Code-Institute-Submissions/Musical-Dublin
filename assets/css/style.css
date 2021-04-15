@@ -45,18 +45,27 @@
 .jumbotron {
     height: 500px;
     width: 100%;
-    background-image: url("/assets/images/temple-bar-2.jpg") !important;
+    opacity: 0.875;
+    /*background-image: url("/assets/images/temple-bar-2.jpg");
     opacity: 0.9; 
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
-   
+    background-position: center; */
+    background-color: #fefcfb; 
     border-left: .5px solid #1282A2;
     border-bottom: .5px solid #1282A2;
     border-right: .5px solid #1282A2;
 }
 
  /* background-color: #D8D8D8; */
+
+.hero-image {
+    background-image: url("/assets/images/temple-bar-2.jpg");
+    opacity: 0.9; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+}
 
 .heading {
     font-family: "Permanent marker", sans-serif;
@@ -73,7 +82,7 @@
     margin-top: 0px;
     margin-bottom: 25px;
     text-align: center;
-    color: #034078;
+    color: #001F54;
 }
 
 .heading-alter {
@@ -132,7 +141,7 @@
     font-family: "Alegreya", sans-serif;
     font-weight: 500;
    font-size: 1.25rem;
-   color: #fff;
+   color: #001F54;
    margin-left: 10px;
    margin-right: 10px;
 }
@@ -338,7 +347,7 @@ form {
 
  .btn {
     font-family: "Alegreya", sans-serif;
-    background-color: #034078;
+    background-color: #001F54;
     color: #fefcfb;
     padding: 10px 20px 10px 20px;
     margin-top: 15px;
@@ -347,8 +356,8 @@ form {
 }
 
 .btn:hover {
-     background-color: #1282A2;
-     border: 1px solid #034078;
+     background-color: #034078;
+     border: 1px solid #001F54;
 }
 
 /*---------------------------------------------Multiple Pages*/
