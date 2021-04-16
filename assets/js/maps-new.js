@@ -1,274 +1,299 @@
-const LOCATIONS_MAP_BY_TYPE = {
-    VENUES: [
-      {
-        name: 'National Concert Hall',
-        address: 'Address:<br> Earlsfort Terrace,<br> Dublin 2.',
-        website: 'https://www.nch.ie/Online/default.asp',
-        lat: 53.334653,
-        lng: -6.258785,
-        information: `NCH is Ireland's primary
-                            venue for Classical music and is home to the
-                            RTE Symphony Orchestra. See weekly concerts in styles
-                            ranging from Baroque to Contemporary Classical.
-                            The venue also regularly hosts travelling Jazz, World
-                            and Irish Traditional shows.`,
+// Code for google map taken from the Google maps api documentation and then modified for this project
+
+// List of all venue marker coordinates inserted on the map
+const coords = {
+  venues: [
+      {   name: "National Concert Hall",
+          address: "Address:<br> Earlsfort Terrace,<br> Dublin 2.",
+          website: "https://www.nch.ie/Online/default.asp",
+          lat: 53.334653,
+          lng: -6.258785,
+          information: `NCH is Ireland's primary
+                        venue for Classical music and is home to the
+                        RTE Symphony Orchestra. See weekly concerts in styles
+                        ranging from Baroque to Contemporary Classical.
+                        The venue also regularly hosts travelling Jazz, World
+                        and Irish Traditional shows.`,
+      }, 
+      {   name: "Vicar Street",
+          address: "Address:<br> 58 Thomas Street,<br>Dublin 8.",
+          website: "https://www.vicarstreet.com/",
+          lat: 53.342609,
+          lng: -6.277989,
+          information: `Vicar Street has, for well over 30 years,
+                        been the staple venue in Ireland for
+                        Rock and Pop concerts. See artists ranging
+                        from Christy Moore to Mastodon to Devo.
+                        Enjoy a drink pre show at any of the 5 bars 
+                        at the venue.`,
+      }, 
+      {   name: "Academy",
+          address: "Address:<br>57 Middle Abbey Street,<br> Dublin 8.",
+          website: "https://www.theacademydublin.com/",
+          lat: 53.348034,
+          lng: -6.262003,
+          information: `A relatively new venue on the Dublin scene, The Academy
+                        has quickly established itself as a quality venue
+                        for Rock and Pop music in Ireland. Recent concerts include
+                        Mayhem and Jeff Beck.`,
+      }, 
+      {   name: "Arthurs",
+          address: "Address:<br> 28 Thomas Street,<br> Dublin 8.",
+          website: "https://www.arthurspub.ie/",
+          lat: 53.343167,
+          lng: -6.28168,
+          information: `Arthurs is Dublin's go to spot for Jazz & Blues in the capital.
+                        Taking over the reins after the unfortunate closure of JJ. Smyth's,
+                        Arthurs has fast established itself as a venue attracting quality
+                        foreign groups like Jonathan Kreisberg's quartet and homegrown
+                        talent such as Ronan Guilfoyle and Greg Felton.`,
+      }, 
+      {   name: "3Arena",
+          address: "3 Arena,<br> North Wall Quay,<br> Dublin 1.",
+          website: "https://www.3arena.ie/",
+          lat: 53.347496,
+          lng: -6.228508,
+          information: `The 3Arena is Irelands largest venue and go to spot for the world's biggest
+                        bands. Big names to have played here include U2, Soundgarden and Queens
+                        of the Stoneage. The venue also hosts a range of other types of shows
+                        including kids concerts like Hannah Montana and Peppa Pig.`,
       },
-      {
-        name: 'Vicar Street',
-        address: 'Address:<br> 58 Thomas Street,<br>Dublin 8.',
-        website: 'https://www.vicarstreet.com/',
-        lat: 53.342609,
-        lng: -6.277989,
-        information: `Vicar Street has, for well over 30 years,
-                            been the staple venue in Ireland for
-                            Rock and Pop concerts. See artists ranging
-                            from Christy Moore to Mastodon to Devo.
-                            Enjoy a drink pre show at any of the 5 bars
-                            at the venue.`,
+  ],
+  education: [
+      {   name: "Newpark/Rock Jam",
+          address: "Address:<br> Newtown Park Avenue<br> Blackrock<br> Co. Dublin",
+          website: "https://www.newparkmusic.ie/",
+          lat: 53.289883,
+          lng: -6.171961,
+          information: `Newpark Music Centre is an internationally recognised
+                        third level course specialising in
+                        Jazz performance. Teaching staff here includes
+                        luminaries on the Irish and International scenes
+                        like Ronan Guilfoyle and Tommy Halferty. 
+                        The school is also the location of Rock Jam, a 
+                        school offering lessons in a band performance setting
+                        where students learn to play as part of a band rather
+                        than one on one classes. The school is primarily
+                        aimed at ages 5-18.`,
       },
-      {
-        name: 'Academy',
-        address: 'Address:<br>57 Middle Abbey Street,<br> Dublin 8.',
-        website: 'https://www.theacademydublin.com/',
-        lat: 53.348034,
-        lng: -6.262003,
-        information: `A relatively new venue on the Dublin scene, The Academy
-                            has quickly established itself as a quality venue
-                            for Rock and Pop music in Ireland. Recent concerts include
-                            Mayhem and Jeff Beck.`,
-      },
-      {
-        name: 'Arthurs',
-        address: 'Address:<br> 28 Thomas Street,<br> Dublin 8.',
-        website: 'https://www.arthurspub.ie/',
-        lat: 53.343167,
-        lng: -6.28168,
-        information: `Arthurs is Dublin's go to spot for Jazz & Blues in the capital.
-                            Taking over the reins after the unfortunate closure of JJ. Smyth's,
-                            Arthurs has fast established itself as a venue attracting quality
-                            foreign groups like Jonathan Kreisberg's quartet and homegrown
-                            talent such as Ronan Guilfoyle and Greg Felton.`,
-      },
-      {
-        name: '3Arena',
-        address: '3 Arena,<br> North Wall Quay,<br> Dublin 1.',
-        website: 'https://www.3arena.ie/',
-        lat: 53.347496,
-        lng: -6.228508,
-        information: `The 3Arena is Irelands largest venue and go to spot for the world's biggest
-                            bands. Big names to have played here include U2, Soundgarden and Queens
-                            of the Stoneage. The venue also hosts a range of other types of shows
-                            including kids concerts like Hannah Montana and Peppa Pig.`,
-      },
-    ],
-    EDUCATION: [
-      {
-        name: 'Newpark/Rock Jam',
-        address: 'Address:<br> Newtown Park Avenue<br> Blackrock<br> Co. Dublin',
-        website: 'https://www.newparkmusic.ie/',
-        lat: 53.289883,
-        lng: -6.171961,
-        information: `Newpark Music Centre is an internationally recognised
-                            third level course specialising in
-                            Jazz performance. Teaching staff here includes
-                            luminaries on the Irish and International scenes
-                            like Ronan Guilfoyle and Tommy Halferty.
-                            The school is also the location of Rock Jam, a
-                            school offering lessons in a band performance setting
-                            where students learn to play as part of a band rather
-                            than one on one classes. The school is primarily
-                            aimed at ages 5-18.`,
-      },
-      {
-        //UCD
-        name: 'UCD',
-        address: 'Address:<br> Belfield Campus,<br> Dublin 4.',
-        website: 'https://www.ucd.ie/music/',
-        lat: 53.294747,
-        lng: -6.184702,
-        information: `The course at UCD provides an in-depth study into
-                            Classical Music in both Theory and Composition.
-                            The course also includes a study in various musical traditions
-                            including Indian Carnatic music and Irish Traditional music.`,
-      },
-      {
-        //BIMM
-        name: 'BIMM',
-        address: 'Address:<br> 79 Francis Street,<br> Dublin 7.',
-        website: 'https://www.bimm.ie/',
-        lat: 53.339906,
-        lng: -6.273719,
-        information: `The Irish branch of BIMM opened in 2012 and has become renowned
-                            for the high quality performers it has produced in that time.
-                            Offering courses in Pop and Rock performance the school offers
-                            a four-year degree in music performance.`,
-      },
-      {
-        //Frank Kearns Rock School
-        name: 'Rock School',
-        address: 'Address:<br>Dublin Road,<br> Kilbarack Lower,<br> Dublin 13.',
-        website: 'http://www.rockschool.ie/',
-        lat: 53.385592,
-        lng: -6.140353,
-        information: `Frank Kearns Rock School offers lessons to all ages and
-                            on all instruments. Lessons are conducted
-                            in a one to one setting ranging from 30 minute to
-                            hour long classes.`,
-      },
-    ],
-    SHOPS: [
-      {
-        //XMusic
-        name: 'XMusic',
-        address:
-          'Address:<br> Red Cow Retail Center,<br>Ballymount,<br>Dublin 22.',
-        website: 'https://www.xmusic.ie/',
-        lat: 53.317752,
-        lng: -6.360684,
-        information: `XMusic is a music superstore stocking everything from drums
-                            to guitar equipment. Located beside the Red Cow in Ballymount,
-                            Walkinstown just off the m50, XMusic is a three-story store with
-                            something for everyone.`,
-      },
-      {
-        //Music Maker
-        name: 'Music Maker',
-        address: 'Address:<br> 29 Exchequer Street,<br>Dublin 2.',
-        website: 'https://www.musicmaker.ie/',
-        lat: 53.343126,
-        lng: -6.262568,
-        information: `Music Maker is Ireland's longest running general
-                            music shop stocking all manner of instruments and equipment.
-                            Feel free to ask any of their friendly staff for help finding the
-                            perfect instrument for you.`,
-      },
-      {
-        //Waltons School of Music
-        name: 'Waltons',
-        address: 'Address<br> Waltons Blanchardstown,<br> Blanchardstown Center.',
-        website: 'https://www.waltons.ie/',
-        lat: 53.394871,
-        lng: -6.394655,
-        information: `Waltons is a long established family business offering quality
-                            instruments. Get excellent advice on any of your needs.
-                            The shop owners are friendly to musicians playing the
-                            in-store instruments, as seen in the motion picture 'Once'.`,
-      },
-      {
-        //Goodwins Music
-        name: 'Goodwins',
-        address: 'Address:<br> 134 Capel Street,<br> Dublin 1.',
-        website: 'https://www.goodwinsmusic.ie/',
-        lat: 53.348098,
-        lng: -6.268734,
-        information: `Goodwins is a shop offering traditional Irish instruments as
-                            well as instrument repair. Offering great prices on
-                            repairs, Goodwins has won a great reputation on the
-                            Traditional Irish music scene.`,
-      },
-      {
-        //McNeela Irish Music Instruments
-        name: 'McNeela',
-        address:
-          'Address:<br> Unit 137,<br> Baldoyle Industrial Estate,<br> Baldoyle,<br> Dublin 13.',
-        website: 'https://www.mcneelamusic.com/',
-        lat: 53.394518,
-        lng: -6.145391,
-        information: `McNeela Irish Music Instruments is a recently
-                            established business specialising in traditional Irish
-                            instruments and instrument repair.`,
-      },
-    ],
-  };
+      {   name: "UCD",
+          address: "Address:<br> Belfield Campus,<br> Dublin 4.",
+          website: "https://www.ucd.ie/music/",
+          lat: 53.294747,
+          lng: -6.184702,
+          information: `The course at UCD provides an in-depth study into
+                        Classical Music in both Theory and Composition.
+                        The course also includes a study in various musical traditions
+                        including Indian Carnatic music and Irish Traditional music.`,
+      }, 
+      {   name: "BIMM",
+          address: "Address:<br> 79 Francis Street,<br> Dublin 7.",
+          website: "https://www.bimm.ie/",
+          lat: 53.339906,
+          lng: -6.273719,
+          information: `The Irish branch of BIMM opened in 2012 and has become renowned
+                        for the high quality performers it has produced in that time.
+                        Offering courses in Pop and Rock performance the school offers
+                        a four-year degree in music performance.`,
+      }, 
+      {   name: "Rock School",
+          address: "Address:<br>Dublin Road,<br> Kilbarack Lower,<br> Dublin 13.",
+          website: "http://www.rockschool.ie/",
+          lat: 53.385592,
+          lng: -6.140353,
+          information: `Frank Kearns Rock School offers lessons to all ages and
+                        on all instruments. Lessons are conducted
+                        in a one to one setting ranging from 30 minute to 
+                        hour long classes.`,
+      }],
+  shops: [
+      {   name: "XMusic",
+          address: "Address:<br> Red Cow Retail Center,<br>Ballymount,<br>Dublin 22.",
+          website: "https://www.xmusic.ie/",
+          lat: 53.317752,
+          lng: -6.360684,
+          information: `XMusic is a music superstore stocking everything from drums
+                        to guitar equipment. Located beside the Red Cow in Ballymount,
+                        Walkinstown just off the m50, XMusic is a three-story store with 
+                        something for everyone.`,
+      }, 
+      {   name: "Music Maker",
+          address: "Address:<br> 29 Exchequer Street,<br>Dublin 2.",
+          website: "https://www.musicmaker.ie/",
+          lat: 53.343126,
+          lng: -6.262568,
+          information: `Music Maker is Ireland's longest running general
+                        music shop stocking all manner of instruments and equipment.
+                        Feel free to ask any of their friendly staff for help finding the 
+                        perfect instrument for you.`,
+      }, 
+      {   name: "Waltons",
+          address: "Address<br> Waltons Blanchardstown,<br> Blanchardstown Center.",
+          website: "https://www.waltons.ie/",
+          lat: 53.394871,
+          lng: -6.394655,
+          information: `Waltons is a long established family business offering quality
+                        instruments. Get excellent advice on any of your needs.
+                        The shop owners are friendly to musicians playing the 
+                        in-store instruments, as seen in the motion picture 'Once'.`,
+      }, 
+      {   name: "Goodwins",
+          address: "Address:<br> 134 Capel Street,<br> Dublin 1.",
+          website: "https://www.goodwinsmusic.ie/",
+          lat: 53.348098,
+          lng: -6.268734,
+          information: `Goodwins is a shop offering traditional Irish instruments as
+                        well as instrument repair. Offering great prices on
+                        repairs, Goodwins has won a great reputation on the
+                        Traditional Irish music scene.`,
+      }, 
+      {   name: "McNeela",
+          address: "Address:<br> Unit 137,<br> Baldoyle Industrial Estate,<br> Baldoyle,<br> Dublin 13.",
+          website: "https://www.mcneelamusic.com/",
+          lat: 53.394518,
+          lng: -6.145391,
+          information: `McNeela Irish Music Instruments is a recently 
+                        established business specialising in traditional Irish 
+                        instruments and instrument repair.`,
+      }, 
+  ]}
   
-  function getMarkerContentFromLocation(venueInfo) {
-    return `
-              <h3 class="info-window-header">${venueInfo.name}</h3>
-              <p class="info-window-p">${venueInfo.information}</p>
-              <p class="info-window-p">${venueInfo.address}</p>
-              <a class="info-window-a" href="${venueInfo.website}"target=_blank>Website</a>
-          `;
-  }
-  //Create the map and give it the default position of Dublin City Centre
+  //Create the map 
   function initMap() {
-    const map = new google.maps.Map(document.getElementById('map'), {
+  const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 12,
-      // Coordinates of Dublin City Centre
-      center: {lat: 53.35014, lng: -6.255155},
-    });
-    let markerRef = null;
-    /* Empty array to hold all markers. This will then be looped through in the clearCoords()
+      //The coordinates of Dublin City Centre
+      center: { lat: 53.35014, lng: -6.255155 },
+  });
+  
+  var InfoObj = [];
+  
+  /* Empty array to hold all markers. This will then be looped through in the clearCoords() 
   function below as a way of clearing the map and entering only the relevant markers when certain images
   are clicked. */
-    let markersList = [];
-    /*Function to loop over the venues coordinates to be invoked later*/
-    function showLocationsOnMap(locations) {
-      locations.forEach(locationInfo => {
-        const markerContentString = getMarkerContentFromLocation(locationInfo);
-        const marker = new google.maps.Marker({
-          position: new google.maps.LatLng(locationInfo.lat, locationInfo.lng),
-          map, //This is the map that the markers will be attached to, the value is the variable "map"
-          title: locationInfo.name, //Will add business name when icon is hovered over
+  var businessCoords = [];
+  
+  /*Function to loop over the venues coordinates to be invoked later*/
+  function showLocationsOnMap(locations){
+  for (let i = 0; i < locations.length; i++) {
+      const contentString =
+          '<h3 class="info-window-header">' +locations[i].name + "</h3>" +
+          '<p class="info-window-p">' +locations[i].information + "</p>" +
+          '<p class="info-window-p">' +locations[i].address + "</p>" +
+          '<a class="info-window-a" href="' +locations[i].website + '"target=_blank>Website</a>';
+  
+      const marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+          map: map, //This is the map that the markers will be attached to, the value is the variable "map"
+          title: locations[i].name, //Will add business name when icon is hovered over
           animation: google.maps.Animation.DROP, //or BOUNCE
           // icon: customIcons[myCoordinates[i].type].icon,
-        });
-        markersList.push(marker);
-        const infowindow = new google.maps.InfoWindow({
-          content: markerContentString,
+      });
+  
+      businessCoords.push(marker);
+  
+      const infowindow = new google.maps.InfoWindow({
+          content: contentString,
           maxWidth: 500,
-        });
-        marker.addListener('click', function () {
+      });
+  
+      marker.addListener("click", function () {
           closeOtherInfo();
           infowindow.open(map, marker);
-          markerRef = infowindow;
+          InfoObj[0] = infowindow;
           map.setZoom(15);
           map.setCenter(marker.getPosition());
-        });
       });
-    // Function to clear all coordinates on the map, before relevant markers are shown relative to button clicked
-    function clearCoords() {
-      for (let i = 0; i < businessCoords.length; i++) {
-        businessCoords[i].setMap(null);
-      }
-    }
-    function getLocationLinksHTML(locations, locationType) {
-      let HTMLString = "";
-      locations.forEach(eachLocation => {
-        HTMLString += `<li><a href="${eachLocation.website}" target="_blank" class="list">${eachLocation.name}</a></li>`;
-      });
-      return `<h2 class="heading-left">${locationType}</h2><ul>${HTMLString}</ul>`;
-    }
-}
-    // Below function loads the venues info by default upon screen-load and gives the venues image an active border
-    $(document).ready(function() {
-      $('.concert-hall').show(function() {
-        $('.venues-drop').html(getLocationLinksHTML(LOCATIONS_MAP_BY_TYPE.VENUES, 'Venues'));
-        clearCoords();
-        showLocationsOnMap(LOCATIONS_MAP_BY_TYPE.VENUES);
-      });
-    });
-    /*Below three functions load info relative to a clicked image as well as load map markers relative to the image and info.
+  }
+  }
+  
+  // Function to clear all coordinates on the map, before relevant markers are shown relative to button clicked
+  function clearCoords() {
+  for (let i = 0; i < businessCoords.length; i++) {
+      businessCoords[i].setMap(null);
+  }
+  };
+  
+  // Below function loads the venues info by default upon screen-load and gives the venues image an active border
+  $(document).ready(function(){
+  $(".concert-hall").show(function(){
+  $(".venues-drop").html(`
+  <h2 class="heading-left">Venues</h2>
+  <ul>
+  <li><h5 class="headers-below">Classical</h5></li>
+  <li><a href="https://www.nch.ie" target="_blank" class="list">The National Concert Hall (NCH)</a></li>
+  <li><h5 class="headers-below">Rock & Pop</h5></li>
+  <li><a href="https://www.vicarstreet.com" target="_blank" class="list">Vicar Street</a></li>
+  <li><a href="https://www.theacademydublin.com" target="_blank" class="list">The Academy</a></li>
+  <li><a href="https://www.3arena.ie" target="_blank" class="list">Three Arena</a></li>
+  <li><h5 class="headers-below">Jazz & Blues</h5></li>
+  <li><a href="https://www.arthurspub.ie" target="_blank" class="list">Arthurs, Blues & Jazz club</a></li>
+  </ul>
+  `);
+  clearCoords();
+  showLocationsOnMap(coords.venues)
+  })
+  }); 
+  
+  
+  /*Below three functions load info relative to a clicked image as well as load map markers relative to the image and info.
   Also they clear any markers that were present before the new image was clicked*/
-    $('.concert-hall').click(function() {
-      $('.venues-drop').html(getLocationLinksHTML(LOCATIONS_MAP_BY_TYPE.VENUES, 'Venues'));
-      clearCoords();
-      showLocationsOnMap(LOCATIONS_MAP_BY_TYPE.VENUES);
-    });
-      $('.education').click(function () {
-        $('.venues-drop').html(getLocationLinksHTML(LOCATIONS_MAP_BY_TYPE.EDUCATION, 'Education'));
-        clearCoords();
-        showLocationsOnMap(LOCATIONS_MAP_BY_TYPE.EDUCATION);
-    });
-    $('.shops').click(function() {
-      $('.venues-drop').html(getLocationLinksHTML(LOCATIONS_MAP_BY_TYPE.SHOPS, 'Shops'));
-        clearCoords();
-        showLocationsOnMap(LOCATIONS_MAP_BY_TYPE.SHOPS);
-    });
-    function closeOtherInfo() {
-      if (markerRef) {
-        markerRef.set('marker', null);
-        markerRef.close();
-        markerRef = null;
+  $(".concert-hall").click(function(){
+  $(".venues-drop").html(`
+  <h2 class="heading-left">Venues</h2>
+  <ul>
+  <li><h5 class="headers-below">Classical</h5></li>
+  <li><a href="https://www.nch.ie" target="_blank" class="list">The National Concert Hall (NCH)</a></li>
+  <li><h5 class="headers-below">Rock & Pop</h5></li>
+  <li><a href="https://www.vicarstreet.com" target="_blank" class="list">Vicar Street</a></li>
+  <li><a href="https://www.theacademydublin.com" target="_blank" class="list">The Academy</a></li>
+  <li><a href="https://www.3arena.ie" target="_blank" class="list">Three Arena</a></li>
+  <li><h5 class="headers-below">Jazz & Blues</h5></li>
+  <li><a href="https://www.arthurspub.ie" target="_blank" class="list">Arthurs, Blues & Jazz club</a></li>
+  </ul>
+  `);
+  clearCoords();
+  showLocationsOnMap(coords.venues)
+  });
+  
+  $(".education").click(function(){
+  $(".venues-drop").html(`
+  <h2 class="heading-left">Education</h2>
+  <ul>
+  <li><h5 class="headers-below">Jazz</h5></li>
+  <li><a href="https://www.newparkmusic.ie" target="_blank" class="list">Newpark Music Centre</a></li>
+  <li><h5 class="headers-below">Classical</h5></li>
+  <li><a href="https://www.ucd.ie/music/" target="_blank" class="list">UCD</a></li>
+  <li><h5 class="headers-below">Rock & Pop Performance</h5></li>
+  <li><a href="https://www.bimm.ie" target="_blank" class="list">BIMM</a></li>
+  <li><a href="https://www.rockjam.ie" target="_blank" class="list">Rock Jam</a></li>
+  <li><a href="https://www.rockschool.ie" target="_blank" class="list">Rock School</a></li>
+  </ul>`);
+  clearCoords();
+  showLocationsOnMap(coords.education)
+  });
+  
+  $(".shops").click(function(){
+  $(".venues-drop").html(`
+  <h2 class="heading-left">Shops</h2>
+  <ul>
+  <li><h5 class="headers-below">General Music Stores</h5></li>
+  <li><a href="https://www.xmusic.ie" target="_blank" class="list">Xmusic</a></li>
+  <li><a href="https://www.musicmaker.ie" target="_blank" class="list">Music Maker</a></li>
+  <li><a href="https://www.waltons.ie/home/our-stores/" target="_blank" class="list">Waltons Music</a></li>
+  <li><a href="https://www.goodwinsmusic.ie" target="_blank" class="list">Goodwins Music</a></li>
+  <li><h5 class="headers-below">Tradional Irish</h5></li>
+  <li><a href="https://www.mcneelamusic.com" target="_blank" class="list">McNeela Music Instruments</a></li>
+  </ul>`);
+  clearCoords();
+  showLocationsOnMap(coords.shops)
+  });
+  
+  function closeOtherInfo() {
+      if (InfoObj.length > 0) {
+          InfoObj[0].set("marker", null);
+          InfoObj[0].close();
+          InfoObj.length = 0;
       }
-    }
-}
+  }
+  }
