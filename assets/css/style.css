@@ -95,6 +95,13 @@
     color: #034078;
 }
 
+.small-text {
+    font-family: "Alegreya", sans-serif;
+    text-align: left;
+    color: #034078;
+    font-size: 1rem;
+}
+
 .heading2 {
     font-family: "Permanent marker", sans-serif;
     font-size: 3.5rem;
@@ -172,6 +179,10 @@
 .list:hover{
     color: #034078;
     text-decoration: none;
+}
+
+.list-js {
+    margin-bottom: 1rem;
 }
 
 .images-below {

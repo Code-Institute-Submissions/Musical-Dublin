@@ -1,5 +1,5 @@
 //On Mobile view, this will have the venues drop-down load automatically and give it an active border class. 
-$(document).ready(function() {
+/* $(document).ready(function() {
     $('#hall').show(function() {
         $(this).addClass("border-images");
         $(".edu-mob-drop").hide();
@@ -21,11 +21,11 @@ $(document).ready(function() {
         $('#hall').removeClass('image-border');
     });
 
-    /*The below 3 functions both add an active border to a clicked image and 
+    The below 3 functions both add an active border to a clicked image and 
     have the drop-down info show below the image, while closing any other drop-downs if open.
     Also an inactive border class is added to the unclicked photos*/
 
-    $('#hall').click(function(){
+    /* $('#hall').click(function(){
         $(this).addClass('border-images');
         $(".edu-mob-drop").hide();
         $(".shops-mob-drop").hide();
@@ -87,8 +87,7 @@ $(document).ready(function() {
         $('#hall, #edu').addClass('image-border');
         $('#shop').removeClass('image-border');
     });
-});
-
+}); */
     // Allow user to open & close drop downs on mobile view, also enter html into a different div located underneath each image
  /*$(".concert-hall").click(function(){
     $(".venues-mob-drop").slideToggle().html(`
