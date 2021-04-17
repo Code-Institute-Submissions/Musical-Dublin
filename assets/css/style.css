@@ -55,7 +55,7 @@
  /* background-color: #D8D8D8; */
 
 .hero-image {
-    background-image: url("../images/temple-bar-2.jpg");
+    background-image: url("/assets/images/temple-bar-2.jpg");
     opacity: 0.9; 
     background-repeat: no-repeat;
     background-attachment: fixed;
