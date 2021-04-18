@@ -55,7 +55,7 @@
  /* background-color: #D8D8D8; */
 
 .hero-image {
-    background-image: url("../images/temple-bar-2.jpg") !important;
+    background-image: url("../images/temple-bar-2.jpg");
     opacity: 0.9; 
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -399,6 +399,7 @@ form {
 
 footer {
     height: 289px;   
+    background-image: url("../images/temple-bar-2.jpg");
 }
 
 ul {
@@ -503,6 +504,10 @@ footer {
 
   .btn {
       margin-top: 35px;
+  }
+
+  .hero-image {
+  background-image: url("../images/temple-bar-2.jpg");
   }
 }
 
