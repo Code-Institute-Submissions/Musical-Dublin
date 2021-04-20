@@ -301,7 +301,7 @@ ul li {
   list-style-type: none;
 }
 
-/*---------------------------------------------main.html*/
+/*---------------------------------------------events.html*/
 
 .heading3 {
     font-family: "Permanent marker", sans-serif;
@@ -316,6 +316,24 @@ ul li {
     color: #1282a2;
 }
 
+#attraction-panel {
+    display:none;
+  }
+
+  #image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .status {
+      color: red ;
+      font-size: 2rem;
+  }
+
+  .panel-title {
+    font-size: 3rem;
+    font-family: "Permanent Marker", sans-serif;
+  }
 /*---------------------------------------------Contact*/
 
 .get-in-touch {
