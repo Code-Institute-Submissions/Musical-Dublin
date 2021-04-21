@@ -3,15 +3,6 @@ function sendMail(contactForm) {
 "from_email": contactForm.emailaddress.value,
 "listing": contactForm.listing.value
 });
-/*.then(
-    function(response){
-        console.log("EMAIL SEND SUCCESS", response);
-    },
-    function(error){
-        console.log("EMAIL SEND FAIL", error);
-    }
-)*/
-// alert("We have received your listing. Thank you, we will reply shortly.");
 }
 
 
@@ -21,7 +12,6 @@ const form = document.getElementById('form');
 const errorDisplay = document.getElementById('error');
 // Have by default, the cursor already in the name input on the contact page.
 document.getElementById('name').focus();
-
 
 form.addEventListener("submit", (e) => {
     let errorMessage = [];  //This array will hold any error messages
@@ -34,8 +24,6 @@ form.addEventListener("submit", (e) => {
     } else if (errorMessage.length <= 0) {
         alert("We have received your listing. Thank you, we will reply shortly.");
     }
-
-    
 });
 
 

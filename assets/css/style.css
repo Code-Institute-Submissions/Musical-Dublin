@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Permanent+Marker&display=swap");
 
 /*---------------------------------------------Navbar*/
 
-.navbar{
-    background-color: #0A1128 !important; /* #fefcfb */
+.navbar {
+    background-color: #0a1128 !important; 
 }
 
-.navbar-brand{
+.navbar-brand {
     font-size: 3rem;
     letter-spacing: 3px;
     color: #fefcfb !important;
@@ -22,7 +22,7 @@
 }
 
 .nav-link:hover {
-    color: #1282A2 !important;
+    color: #1282a2 !important;
 }
 
 .home-link {
@@ -30,14 +30,13 @@
 }
 
 .navbar-toggler {
-   background-color: #1282A2 !important;   
-   font-size: 1.5rem;
-   border: 1px solid #fefcfb !important; 
-   
+    background-color: #1282a2 !important;
+    font-size: 1.5rem;
+    border: 1px solid #fefcfb !important;
 }
 
 .active {
-    color: #1282A2 !important;   
+    color: #1282a2 !important;
 }
 
 /*---------------------------------------------Index*/
@@ -46,20 +45,18 @@
     height: 500px;
     width: 100%;
     opacity: 0.875;
-    background-color: #fefcfb; 
-    border-left: .5px solid #1282A2;
-    border-bottom: .5px solid #1282A2;
-    border-right: .5px solid #1282A2;
+    background-color: #fefcfb;
+    border-left: 0.5px solid #1282a2;
+    border-bottom: 0.5px solid #1282a2;
+    border-right: 0.5px solid #1282a2;
 }
-
- /* background-color: #D8D8D8; */
 
 .hero-image {
     background-image: url("../images/temple-bar-2.jpg");
-    opacity: 0.9; 
+    opacity: 0.9;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: bottom; 
+    background-position: bottom;
 }
 
 .heading {
@@ -77,7 +74,7 @@
     margin-top: 0px;
     margin-bottom: 25px;
     text-align: center;
-    color: #001F54;
+    color: #001f54;
 }
 
 .heading-alter {
@@ -133,19 +130,19 @@
 .normal-text {
     font-family: "Alegreya", sans-serif;
     font-weight: 500;
-   font-size: 1.25rem;
-   color: #034078;
-   margin-left: 10px;
-   margin-right: 10px;
+    font-size: 1.25rem;
+    color: #034078;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .normal-text-index {
     font-family: "Alegreya", sans-serif;
     font-weight: 500;
-   font-size: 1.25rem;
-   color: #001F54;
-   margin-left: 10px;
-   margin-right: 10px;
+    font-size: 1.25rem;
+    color: #001f54;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .index-images {
@@ -170,13 +167,13 @@
 .list {
     font-size: 1.25rem;
     font-family: "Alegreya", sans-serif;
-    color: #1282A2;
+    color: #1282a2;
     text-decoration: none;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.list:hover{
+.list:hover {
     color: #034078;
     text-decoration: none;
 }
@@ -210,18 +207,18 @@
 .info-window-p {
     font-size: 1rem;
     text-align: left;
-    font-family: "Alegreya", sans-serif;  
-    color: #001F54;
+    font-family: "Alegreya", sans-serif;
+    color: #001f54;
 }
 
 .info-window-a {
     text-decoration: none;
-    color: #1282A2;
+    color: #1282a2;
 }
 
 .info-window-a:hover {
     text-decoration: underline;
-    color: #001F54;
+    color: #001f54;
 }
 
 .border-images {
@@ -234,19 +231,19 @@
 
 #error {
     font-family: "Alegreya", sans-serif;
-    color: #FF0800;
+    color: #ff0800;
     font-size: 1.25rem;
 }
 
 /*---------------------------------------------Footer*/
 
 footer {
-    height: 175px;   /* 175px */
+    height: 175px; /* 175px */
     margin-top: 32px;
-    background-color: #0A1128;
+    background-color: #0a1128;
 }
 
-.copyright{
+.copyright {
     text-align: center;
     bottom: 0;
     margin-top: 20px;
@@ -261,10 +258,10 @@ footer {
 }
 
 .social i:hover {
-    color: #1282A2;
+    color: #1282a2;
 }
 
-.about{
+.about {
     margin-top: 25px;
     font-size: 1.5rem;
     font-family: "Permanent Marker", sans-serif;
@@ -293,12 +290,12 @@ ul {
     font-family: "Alegreya", sans-serif;
     font-size: 1.1rem;
     text-decoration: none;
-    color: #1282A2; /* #034078 */
+    color: #1282a2; /* #034078 */
     margin-top: 3px;
 }
 
 ul li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 /*---------------------------------------------events.html*/
@@ -312,78 +309,77 @@ ul li {
     color: #034078;
 }
 
-.heading-color-2{
+.heading-color-2 {
     color: #1282a2;
 }
 
 #attraction-panel {
-    display:none;
-  }
+    display: none;
+}
 
-  #image {
+#image {
     width: 100px;
     height: 100px;
-  }
+}
 
-  .image-info-events {
+.image-info-events {
     font-family: "Alegreya", sans-serif;
     text-align: center;
     color: #034078;
     margin-bottom: 15px;
-   
-  }
+}
 
-  .panel-title {
+.panel-title {
     font-size: 3rem;
     font-family: "Permanent Marker", sans-serif;
-  }
+}
 
-  .list-group-item-heading {
+.list-group-item-heading {
     font-family: "Alegreya", sans-serif;
     font-size: 2rem;
     color: #034078;
     text-align: center;
-  }
+}
 
-  .list-group-item-text {
+.list-group-item-text {
     font-family: "Alegreya", sans-serif;
     font-size: 1.5rem;
     color: #034078;
     text-align: center;
-  }
+}
 
-  .venue {
+.venue {
     font-family: "Alegreya", sans-serif;
     font-size: 1.5rem;
     color: #034078;
     text-align: center;
-  }
+}
 
-  .promoter {
+.promoter {
     font-family: "Alegreya", sans-serif;
     font-size: 1rem;
     color: #034078;
     text-align: center;
-  }
+}
 
-  .note {
+.note {
     font-family: "Alegreya", sans-serif;
     font-size: 1rem;
     color: #034078;
     text-align: left;
-  }
+}
 
-  .status {
-    color: red ;
+.status {
+    color: red;
     font-size: 2rem;
     font-family: "Alegreya", sans-serif;
     text-align: center;
     text-transform: uppercase;
-  }
+}
 
-  .list-group-item:hover {
-      text-decoration: none;
-  }
+.list-group-item:hover {
+    text-decoration: none;
+}
 
 /*---------------------------------------------Contact*/
 
@@ -401,19 +397,19 @@ form {
 
 /*---------------------------------------------Buttons*/
 
- .btn {
+.btn {
     font-family: "Alegreya", sans-serif;
-    background-color: #001F54;
+    background-color: #001f54;
     color: #fefcfb;
     padding: 10px 20px 10px 20px;
     margin-top: 15px;
-    text-align: center; 
+    text-align: center;
     border-radius: 5px;
 }
 
 .btn:hover {
-     background-color: #034078;
-     border: 1px solid #001F54;
+    background-color: #034078;
+    border: 1px solid #001f54;
 }
 
 /*---------------------------------------------Multiple Pages*/
@@ -434,64 +430,63 @@ form {
         letter-spacing: 0;
     }
     .navbar-toggler {
-   font-size: 1rem;
-   }
+        font-size: 1rem;
+    }
 
-   .nav-link {
-       font-size: 1rem;
-   }
+    .nav-link {
+        font-size: 1rem;
+    }
 
-   .about h5{
-    margin-top: 10px;
-    font-size: .9rem;
-    letter-spacing: 2px;
-    text-align: center;
-    margin-bottom: 10px;
-}
+    .about h5 {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
 
-.jumbotron {
-    height: 1190px;
-  width: 100%;
-  text-align: left;
-  border: 1px solid #034078;
-}
+    .jumbotron {
+        height: 1190px;
+        width: 100%;
+        text-align: left;
+        border: 1px solid #034078;
+    }
 
-.social i {
-    font-size: 2.2rem;
-    margin: 25px 25px 20px 0;
-}
+    .social i {
+        font-size: 2.2rem;
+        margin: 25px 25px 20px 0;
+    }
 
-.about-text {
-    font-size: .95rem;
-    text-align: center; 
-}
+    .about-text {
+        font-size: 0.95rem;
+        text-align: center;
+    }
 
-footer {
-    height: 289px;   
-    background-image: url("../images/temple-bar-2.jpg");
-}
+    footer {
+        height: 289px;
+        background-image: url("../images/temple-bar-2.jpg");
+    }
 
-ul {
-    margin-top: 10px;
-}
+    ul {
+        margin-top: 10px;
+    }
 
-.question li a {
-    font-size: 1rem;
-    list-style-type: square;
-    text-align: center;
-    margin-top: 20px;
-}
+    .question li a {
+        font-size: 1rem;
+        list-style-type: square;
+        text-align: center;
+        margin-top: 20px;
+    }
 
-.footer {
-    height: 300px;
-}
+    .footer {
+        height: 300px;
+    }
 
-.copyright {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: .9rem;
-}
-
+    .copyright {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
 }
 
 @media only screen and (min-width: 300px) {
@@ -505,27 +500,26 @@ ul {
         font-size: 1.5rem;
         letter-spacing: 1px;
     }
-   
+
     .navbar-toggler {
-   font-size: 1rem;
-   }
+        font-size: 1rem;
+    }
 
-   .nav-link {
-     font-size: 1.25rem;
-   }
+    .nav-link {
+        font-size: 1.25rem;
+    }
 
-.jumbotron {
-    height: 1075px;
-  width: 100%;
-  border: 1px solid #034078;
-  border-left: 0;
-  border-right: 0;
-}
+    .jumbotron {
+        height: 1075px;
+        width: 100%;
+        border: 1px solid #034078;
+        border-left: 0;
+        border-right: 0;
+    }
 
-footer {
-    height: 289px;   
-}
-
+    footer {
+        height: 289px;
+    }
 }
 
 @media only screen and (min-width: 360px) {
@@ -533,24 +527,24 @@ footer {
         font-size: 1.75rem;
         letter-spacing: 3px;
     }
-   
+
     .navbar-toggler {
-   font-size: 1.25rem;
-   }
-   
-   .nav-link {
-     font-size: 1.5rem;
-   }
+        font-size: 1.25rem;
+    }
 
-   .jumbotron {
-    height: 955px;
-  width: 100%;
-  border: 1px solid #034078;
-}
+    .nav-link {
+        font-size: 1.5rem;
+    }
 
-.btn {
-      margin-top: 20px;
-  }
+    .jumbotron {
+        height: 955px;
+        width: 100%;
+        border: 1px solid #034078;
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
 }
 
 @media only screen and (min-width: 375px) and (max-width: 400px) {
@@ -558,26 +552,26 @@ footer {
         font-size: 1.75rem;
         letter-spacing: 3px;
     }
-   
+
     .navbar-toggler {
-   font-size: 1.25rem;
-   }
+        font-size: 1.25rem;
+    }
 
-   .nav-link {
-     font-size: 1.5rem;
-   }
+    .nav-link {
+        font-size: 1.5rem;
+    }
 
-   .jumbotron {
-  border: 0;
-  }
+    .jumbotron {
+        border: 0;
+    }
 
-  .btn {
-      margin-top: 35px;
-  }
+    .btn {
+        margin-top: 35px;
+    }
 
-  .hero-image {
-  background-image: url("../images/temple-bar-2.jpg");
-  }
+    .hero-image {
+        background-image: url("../images/temple-bar-2.jpg");
+    }
 }
 
 @media only screen and (min-width: 411px) {
@@ -585,24 +579,24 @@ footer {
         font-size: 2rem;
         letter-spacing: 5px;
     }
-   
+
     .navbar-toggler {
-   font-size: 1rem;
-   }
+        font-size: 1rem;
+    }
 
-   .nav-link {
-     font-size: 1.5rem;
-   }
+    .nav-link {
+        font-size: 1.5rem;
+    }
 
-   .jumbotron {
-    height: 900px;
-  width: 100%;
-  border: 0;
-  }
+    .jumbotron {
+        height: 900px;
+        width: 100%;
+        border: 0;
+    }
 
-  .btn {
-      margin-top: 40px;
-  }
+    .btn {
+        margin-top: 40px;
+    }
 }
 
 @media only screen and (min-width: 414px) {
@@ -610,22 +604,22 @@ footer {
         font-size: 1.75rem;
         letter-spacing: 3px;
     }
-   
+
     .navbar-toggler {
-   font-size: 1rem;
-   }
+        font-size: 1rem;
+    }
 
-   .nav-link {
-     font-size: 1.75rem;
-   }
+    .nav-link {
+        font-size: 1.75rem;
+    }
 
-   .jumbotron {
-   border: 0;
-   }
+    .jumbotron {
+        border: 0;
+    }
 
-   .btn {
-      margin-top: 40px;
-  }
+    .btn {
+        margin-top: 40px;
+    }
 }
 
 @media only screen and (min-width: 540px) {
@@ -633,28 +627,28 @@ footer {
         font-size: 2.5rem;
         letter-spacing: 5px;
     }
-   
+
     .navbar-toggler {
-   font-size: 1.5rem;
-   }
+        font-size: 1.5rem;
+    }
 
-   .nav-link {
-     font-size: 1.5rem;
-   }
+    .nav-link {
+        font-size: 1.5rem;
+    }
 
-   .jumbotron {
-       height: 700px;
-    border: 1px solid #034078;
- }
+    .jumbotron {
+        height: 700px;
+        border: 1px solid #034078;
+    }
 
- footer {
-    height: 265px;   
-}
+    footer {
+        height: 265px;
+    }
 }
 
 @media only screen and (min-width: 577px) {
     footer {
-        height: 204px;   
+        height: 204px;
     }
 }
 
@@ -663,47 +657,46 @@ footer {
         font-size: 3rem;
         letter-spacing: 5px;
     }
-   
+
     .navbar-toggler {
-   font-size: 1.75rem;
-   }
+        font-size: 1.75rem;
+    }
 
-   .nav-link {
-     font-size: 2rem;
-   }
+    .nav-link {
+        font-size: 2rem;
+    }
 
-   .jumbotron {
-       height: 650px;
-    border: 1px solid #034078;
- }
+    .jumbotron {
+        height: 650px;
+        border: 1px solid #034078;
+    }
 
- footer {
-    height: 173px;   
-}
+    footer {
+        height: 173px;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
-    .navbar-brand{
-    font-size: 3rem;
-    letter-spacing: 5px;
+    .navbar-brand {
+        font-size: 3rem;
+        letter-spacing: 5px;
     }
 
     .navbar-toggler {
-   font-size: 1.5rem;
-   }
+        font-size: 1.5rem;
+    }
 
-.nav-link {
-    font-size: 1.6rem;
-    letter-spacing: 1x;
+    .nav-link {
+        font-size: 1.6rem;
+        letter-spacing: 1x;
+    }
+
+    .jumbotron {
+        height: 550px;
+        border: 1px solid #034078;
+    }
+
+    footer {
+        height: 173px;
+    }
 }
-
-.jumbotron {
-       height: 550px;
-    border: 1px solid #034078;
- }
-
- footer {
-    height: 173px;   
-}
-}
-
