@@ -14,7 +14,7 @@ function showEvents(json) {
     item.children('.list-group-item-text').text(events[i].dates.start.localDate);
     item.children('.status').text(events[i].dates.status.code);
     item.children('.promoter').text(events[i].promoters[1].name);
-    item.children('.note').text(events[i].pleaseNote)
+    item.children('.note').text(events[i].pleaseNote);
 
   try {
       item.children('.venue').text(events[i]._embedded.venues[0].name);
@@ -22,6 +22,6 @@ function showEvents(json) {
       console.log(err);
     }
     item.show();
-  console.log(events)
+  console.log(events);
 } 
 }

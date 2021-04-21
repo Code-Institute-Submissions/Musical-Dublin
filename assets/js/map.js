@@ -169,7 +169,7 @@ shops: [
                       instruments and instrument repair.`,
         genre: ""
     }, 
-]}
+]};
 
 //Create the map 
 function initMap() {
