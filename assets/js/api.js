@@ -15,10 +15,9 @@ function showEvents(json) {
     item.children('.status').text(events[i].dates.status.code);
     item.children('.promoter').text(events[i].promoters[1].name);
     item.children('.note').text(events[i].pleaseNote)
-  /*  item.children('.cost').text(events)[i].priceRanges[0].max ;  */
-  
-    try {
-      item.children('.venue').text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
+
+  try {
+      item.children('.venue').text(events[i]._embedded.venues[0].name);
     } catch (err) {
       console.log(err);
     }

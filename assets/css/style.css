@@ -325,15 +325,66 @@ ul li {
     height: 100px;
   }
 
-  .status {
-      color: red ;
-      font-size: 2rem;
+  .image-info-events {
+    font-family: "Alegreya", sans-serif;
+    text-align: center;
+    color: #034078;
+    margin-bottom: 15px;
+   
   }
 
   .panel-title {
     font-size: 3rem;
     font-family: "Permanent Marker", sans-serif;
   }
+
+  .list-group-item-heading {
+    font-family: "Alegreya", sans-serif;
+    font-size: 2rem;
+    color: #034078;
+    text-align: center;
+  }
+
+  .list-group-item-text {
+    font-family: "Alegreya", sans-serif;
+    font-size: 1.5rem;
+    color: #034078;
+    text-align: center;
+  }
+
+  .venue {
+    font-family: "Alegreya", sans-serif;
+    font-size: 1.5rem;
+    color: #034078;
+    text-align: center;
+  }
+
+  .promoter {
+    font-family: "Alegreya", sans-serif;
+    font-size: 1rem;
+    color: #034078;
+    text-align: center;
+  }
+
+  .note {
+    font-family: "Alegreya", sans-serif;
+    font-size: 1rem;
+    color: #034078;
+    text-align: left;
+  }
+
+  .status {
+    color: red ;
+    font-size: 2rem;
+    font-family: "Alegreya", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .list-group-item:hover {
+      text-decoration: none;
+  }
+
 /*---------------------------------------------Contact*/
 
 .get-in-touch {
