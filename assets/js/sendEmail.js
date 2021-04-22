@@ -5,7 +5,6 @@ function sendMail(contactForm) {
 });
 }
 
-
 // Form validation code largely taken from Web Dev Simplified on YouTube, and modified in this project. Video credited in README file.
 const listing = document.getElementById('textarea');
 const form = document.getElementById('form');
