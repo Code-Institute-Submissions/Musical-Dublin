@@ -1,7 +1,7 @@
 //GET request
-fetch("https://app.ticketmaster.com/discovery/v2/events.json?keyword=deftones&id=16vOZpfQ9G7SOsV&apikey=6UVAl4kH2qy1pxo2XkYN6ZAIgLJIX3SK")
+/* fetch("https://app.ticketmaster.com/discovery/v2/events.json?keyword=deftones&id=16vOZpfQ9G7SOsV&apikey=6UVAl4kH2qy1pxo2XkYN6ZAIgLJIX3SK")
 .then(response => response.json()) //This promise returns response in JSON format
-.then((data) => displayEvents(data));    /* sortInfo(data) */
+.then((data) => displayEvents(data));   
 
 function displayEvents(data) {
   var item = $('.list-group-item');
@@ -19,13 +19,13 @@ for (var i = 0; i < events.length; i++) {
 
 }
 
+ */
 
 
+fetch("https://app.ticketmaster.com/discovery/v2/events.json?&apikey=6UVAl4kH2qy1pxo2XkYN6ZAIgLJIX3SK&city=['dublin']")
+.then(response => response.json())
+.then((data) => console.log(data))
 
 
 
  
-/* try { */
-  /*catch (error) {
-    console.log(error);
-    } */
