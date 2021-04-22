@@ -8,16 +8,24 @@ function displayEvents(data) {
   var events = data._embedded.events;
  
 for (var i = 0; i < events.length; i++) {
-    try {
     item.children('.list-group-item-heading').text(events[i].name);
     item.children('.list-group-item-text').text(events[i].dates.start.localDate);
     item.children('.status').text(events[i].dates.status.code);
     item.children('.promoter').text(events[i].promoters[1].name);
     item.children('.note').text(events[i].pleaseNote);
     item.children('.venue').text(events[i]._embedded.venues[0].name);
-    } catch (error) {
-    console.log(error);
-    }
+    } 
   console.log(events);
-} 
+
 }
+
+
+
+
+
+
+ 
+/* try { */
+  /*catch (error) {
+    console.log(error);
+    } */
