@@ -215,9 +215,6 @@ for (let i = 0; i < locations.length; i++) {
 }
 }
 
-/* Empty array to hold all markers. This will then be looped through in the clearCoords() 
-function below as a way of clearing the map and entering only the relevant markers when certain images
-are clicked. */
 var businessCoords = [];
 
 // Function to clear all coordinates on the map, before relevant markers are shown relative to button clicked

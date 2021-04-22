@@ -4,11 +4,10 @@ fetch("https://app.ticketmaster.com/discovery/v2/events.json?keyword=deftones&id
 .then((data) => displayEvents(data));    /* sortInfo(data) */
 
 function displayEvents(data) {
-  var items = $('.list-group-item');
+  var item = $('.list-group-item');
   var events = data._embedded.events;
-  var item = items.first(); 
  
-  for (var i = 0; i < events.length; i++) {
+for (var i = 0; i < events.length; i++) {
     try {
     item.children('.list-group-item-heading').text(events[i].name);
     item.children('.list-group-item-text').text(events[i].dates.start.localDate);
@@ -17,9 +16,8 @@ function displayEvents(data) {
     item.children('.note').text(events[i].pleaseNote);
     item.children('.venue').text(events[i]._embedded.venues[0].name);
     } catch (error) {
-      console.log(error);
+    console.log(error);
     }
-  item.show();
   console.log(events);
 } 
 }
