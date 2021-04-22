@@ -1,6 +1,7 @@
 # Musical Dublin
-This site is intended as a source for music fans to get a comprehensive list of musical venues, education facilities and music shops in the 
-Irish capital. It is intended also to let users know of upcoming events in the city.
+This site is intended as a source for music fans to get a comprehensive list of musical venues, education facilities and music shops in the Irish capital. It is intended also to let users know of upcoming events in the city. The site accepts entries from users to have their venue, school or shops listed for other users to see.
+
+The deployed site is available [here]( https://aaronh1986.github.io/Musical-Dublin/)
 
 # User Stories
 As a first time user of the site, I want to:
@@ -27,7 +28,7 @@ that compliment each other well. I had the above reasons in mind when I decided 
 
 
 
-# Debugging
+## Debugging
 1. I could not get the Google map to render on the screen. After exhausting options including re-writing the code to make sure I had it correct, and checking against the documentation on the Google maps website, I finally decided to comment out an asterisk in the css file
 which changed the background-color of the entire site to #fefcfb, a variant of white. This worked and the map while using the same code, rendered on the site. 
 2. I tried a number of different ways of connecting the map markers on the map to the image clicked, i.e the Venues, Education or Shops
