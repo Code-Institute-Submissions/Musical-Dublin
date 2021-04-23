@@ -338,14 +338,14 @@ ul li {
     font-family: "Permanent Marker", sans-serif;
 }
 
-.list-group-item-heading {
+.heading {
     font-family: "Alegreya", sans-serif;
     font-size: 2rem;
     color: #034078;
     text-align: center;
 }
 
-.list-group-item-text {
+.date {
     font-family: "Alegreya", sans-serif;
     font-size: 1.5rem;
     color: #034078;
@@ -370,7 +370,7 @@ ul li {
     font-family: "Alegreya", sans-serif;
     font-size: 1rem;
     color: #034078;
-    text-align: left;
+    text-align: center;
 }
 
 .status {
