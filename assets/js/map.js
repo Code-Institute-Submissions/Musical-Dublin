@@ -1,4 +1,5 @@
-// Code for google map taken from the Google maps api documentation and then modified for this project
+// Code for google map taken from the Google maps api documentation and then modified for this project, aswell as
+// with pointers and advice from my mentor.
 
 // List of all venue marker coordinates inserted on the map
 const coords = {
@@ -181,7 +182,7 @@ const map = new google.maps.Map(document.getElementById("map"), {
 
 var InfoObj = [];
 
-/*Function to loop over the venues coordinates to be invoked later*/
+/*Function to loop over the coordinates to be invoked later*/
 function showLocationsOnMap(locations){
 for (let i = 0; i < locations.length; i++) {
     const contentString =
@@ -190,6 +191,7 @@ for (let i = 0; i < locations.length; i++) {
         '<p class="info-window-p">' +locations[i].address + "</p>" +
         '<a class="info-window-a" href="' +locations[i].website + '"target=_blank>Website</a>';
 
+// Create markers
     const marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
         map: map, //This is the map that the markers will be attached to, the value is the variable "map"
@@ -200,11 +202,13 @@ for (let i = 0; i < locations.length; i++) {
 
     businessCoords.push(marker);
 
+    // Create info windows
     const infowindow = new google.maps.InfoWindow({
         content: contentString,
         maxWidth: 500,
     });
 
+// Add listener to info windows to listen for click and add new infowindow while closing the previous one
     marker.addListener("click", function () {
         closeOtherInfo();
         infowindow.open(map, marker);
@@ -216,14 +220,16 @@ for (let i = 0; i < locations.length; i++) {
 }
 
 var businessCoords = [];
-
 // Function to clear all coordinates on the map, before relevant markers are shown relative to button clicked
+// Markers are stored in the above empty array and then removed according to business type.
 function clearCoords() {
 for (let i = 0; i < businessCoords.length; i++) {
     businessCoords[i].setMap(null);
 }
 };
 
+// Extract information from coordinates info at top of this file. Then invoke this in below functions 
+// to display information on index.html underneath images.
 function getVenuesLocationHTML(locations, locationType) {
     let HTMLString = "";
     locations.forEach((location) => {
@@ -232,6 +238,7 @@ function getVenuesLocationHTML(locations, locationType) {
     return `<h2 class="heading-left">${locationType}</h2><ul>${HTMLString}</ul>`;
   }
 
+// Display info underneath images in index.html
 $(document).ready(function(){
     $(".concert-hall").show(function(){
     $(".venues-drop").html(getVenuesLocationHTML(coords.venues, "VENUES"));
@@ -274,6 +281,7 @@ $(document).ready(function(){
     showLocationsOnMap(coords.shops);
     }); 
     
+// Close info window when another marker is clicked. 
 function closeOtherInfo() {
     if (InfoObj.length > 0) {
         InfoObj[0].set("marker", null);

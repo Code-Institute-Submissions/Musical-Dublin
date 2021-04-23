@@ -1,3 +1,4 @@
+// Make contact with emailJs api 
 function sendMail(contactForm) {
     emailjs.send("service_pow46zn", "template_y96c8bc", {"from_name": contactForm.name.value,
 "from_email": contactForm.emailaddress.value,
@@ -5,13 +6,15 @@ function sendMail(contactForm) {
 });
 }
 
-// Form validation code largely taken from Web Dev Simplified on YouTube, and modified in this project. Video credited in README file.
+// Form validation code mostly taken from Web Dev Simplified on YouTube, and modified in this project. 
+// Video available here https://www.youtube.com/watch?v=In0nB0ABaUk
 const listing = document.getElementById('textarea');
 const form = document.getElementById('form');
 const errorDisplay = document.getElementById('error');
 // Have by default, the cursor already in the name input on the contact page.
 document.getElementById('name').focus();
 
+// Below is code to handle textarea being submitted empty and inform the user with a message
 form.addEventListener("submit", (e) => {
     let errorMessage = [];  //This array will hold any error messages
     if (listing.value === '' || listing.value == null) {

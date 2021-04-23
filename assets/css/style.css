@@ -338,7 +338,7 @@ ul li {
     font-family: "Permanent Marker", sans-serif;
 }
 
-.heading {
+.heading-events {
     font-family: "Alegreya", sans-serif;
     font-size: 2rem;
     color: #034078;
@@ -379,6 +379,7 @@ ul li {
     font-family: "Alegreya", sans-serif;
     text-align: center;
     text-transform: uppercase;
+    border-bottom: 1px solid #034078;
 }
 
 .list-group-item:hover {
