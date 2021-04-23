@@ -1,4 +1,4 @@
-# Musical Dublin
+# Musical Dublin (Milestone Project 2 by Aaron Harbourne)
 This site is intended as a source for music fans to get a comprehensive list of musical venues, education facilities and music shops in the Irish capital. It is intended also to let users know of upcoming events in the city. The site accepts entries from users to have their venue, school or shops listed for other users to see.
 
 The deployed site is available [here]( https://aaronh1986.github.io/Musical-Dublin/)
