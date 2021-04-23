@@ -238,7 +238,7 @@
 /*---------------------------------------------Footer*/
 
 footer {
-    height: 175px; /* 175px */
+    height: 175px; 
     margin-top: 32px;
     background-color: #0a1128;
 }
@@ -247,12 +247,12 @@ footer {
     text-align: center;
     bottom: 0;
     margin-top: 20px;
-    color: #fefcfb; /* #1282A2 */
+    color: #fefcfb; 
 }
 
 .social i {
     font-size: 3rem;
-    color: #fefcfb; /* #034078 */
+    color: #fefcfb; 
     margin-top: 20px;
     margin-right: 25px;
 }
@@ -266,7 +266,7 @@ footer {
     font-size: 1.5rem;
     font-family: "Permanent Marker", sans-serif;
     letter-spacing: 4px;
-    color: #fefcfb; /* #034078 */
+    color: #fefcfb; 
 }
 
 .about-text {
@@ -282,7 +282,7 @@ ul {
     font-family: "Alegreya", sans-serif;
     font-size: 1.1rem;
     text-decoration: none;
-    color: #fefcfb; /* #034078 */
+    color: #fefcfb; 
     margin-top: 3px;
 }
 
@@ -290,7 +290,7 @@ ul {
     font-family: "Alegreya", sans-serif;
     font-size: 1.1rem;
     text-decoration: none;
-    color: #1282a2; /* #034078 */
+    color: #1282a2; 
     margin-top: 3px;
 }
 
@@ -430,6 +430,7 @@ form {
 /*---------------------------------------------Media Query*/
 
 @media only screen and (max-width: 300px) {
+    
     .navbar-brand {
         font-size: 1.5rem;
         letter-spacing: 0;
@@ -486,6 +487,8 @@ form {
 
     .footer {
         height: 300px;
+        background-color: #0a1128 !important;
+        color: #fefefe;
     }
 
     .copyright {
@@ -493,6 +496,16 @@ form {
         margin-bottom: 10px;
         font-size: 0.9rem;
     }
+
+    .heading-alter {
+        font-family: "Permanent marker", sans-serif;
+        font-size: 2.75rem;
+    }
+
+    .heading {
+        font-size: 2.75rem !important;
+    }
+
 }
 
 @media only screen and (min-width: 300px) {
@@ -526,6 +539,15 @@ form {
 
     footer {
         height: 289px;
+    }
+
+    .heading-alter {
+        font-family: "Permanent marker", sans-serif;
+        font-size: 2.75rem;
+    }
+
+    .heading {
+        font-size: 2.75rem !important;
     }
 }
 
