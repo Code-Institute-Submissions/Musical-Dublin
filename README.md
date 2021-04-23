@@ -6,11 +6,11 @@ The deployed site is available [here]( https://aaronh1986.github.io/Musical-Dubl
 Wireframes pdf available in github repository above.
 
 Below are images of the three pages of the website accross four different screen sizes
-![index-page-markup](./assets/images/screenshot-1.jpg)
+![index-page-markup](assets/images/screenshot-1.jpg)
 
-![events-page-markup](./assets/images/screenshot-2.jpg)
+![events-page-markup](assets/images/screenshot-2.jpg)
 
-![contact-page-markup](./assets/images/screenshot-3.jpg)
+![contact-page-markup](assets/images/screenshot-3.jpg)
 
 # User Stories
 As a first time user of the site, I want to:
