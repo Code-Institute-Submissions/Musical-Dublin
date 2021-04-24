@@ -61,9 +61,8 @@ that compliment each other well. I had the above reasons in mind when I decided 
 which changed the background-color of the entire site to #fefcfb, a variant of white. This worked and the map while using the same code, rendered on the site. 
 2. I tried a number of different ways of connecting the map markers on the map to the image clicked, i.e the Venues, Education or Shops
 images. I wanted only the shop markers to show when the shop image was clicked and the same for the other two images. My first attempt was
-to add 'marker.setMap(null);' in the jQuery image click event before where I invoked the function to set the markers on the map, i.e venuesLocations() etc. in the maps.js file. That only cleared all the markers so next I added an empty array to each function (venuesLocations etc.) . Finally I decided to add all the markers in each funtion to the empty array 'businessCoords' then loop through them in the function clearCoords. After that I invoked the clearCoords function before the venuesLocations etc., functions and that worked
+to add 'marker.setMap(null);' in the jQuery image click event before where I invoked the function to set the markers on the map, i.e venuesLocations() etc. in the maps.js file. That only cleared all the markers so next I added an empty array to each function (venuesLocations etc.) . Finally I decided to add all the markers in each function to the empty array 'businessCoords' then loop through them in the function clearCoords. After that I invoked the clearCoords function before the venuesLocations etc., functions and that worked
 to match the images to the specific markers on the map.
-
 
 ## Features
 1. The map is responsive across different screen sizes.
@@ -94,6 +93,8 @@ to match the images to the specific markers on the map.
 10. When opening the site on my mobile phone the hero image was not rendering. After trying numerous things to make it render I asked my mentor who tried opening the page on his mobile phone. The hero image rendered correctly on his phone. Unfortunately I still have not been able to get it working on my own which is an Iphone 7. 
 11. All links on the site have been tested to make sure there are no broken links on the site.
 12. All Google map markers on the map have been tested to make sure that the correct markers display when either the Venues, Education or Shops images are clicked. This was done simply by clicking on each one to make sure the information in the info window and the location on the map matched the image clicked.
+13. All social media links in the footer open up in a new tab so that the user doesn't move off of the site completely.
+14. The 'contact us' button on the index page opens the contact.html page in the same tab as I didn't deem it necessary to have more than one tab open for the user
 
  
 
