@@ -54,7 +54,7 @@ that compliment each other well. I had the above reasons in mind when I decided 
 12. GITPOD - This is the editor I used to code the project with. 
 13. GOOGLE MAPS API - This site provided documentation necessary to implement the google map in my project.
 14. EMAIL JS - An api used to send an email to my gmail account with user information when a user fills out the contact form.
-15. TICKETMASTER API - An api used to 
+15. TICKETMASTER API - An api used to get event information into the project
 
 ## Debugging
 1. I could not get the Google map to render on the screen. After exhausting options including re-writing the code to make sure I had it correct, and checking against the documentation on the Google maps website, I finally decided to comment out an asterisk in the css file
@@ -65,15 +65,37 @@ to add 'marker.setMap(null);' in the jQuery image click event before where I inv
 to match the images to the specific markers on the map.
 
 
+## Features
+1. The map is responsive across different screen sizes.
+2. The site features a Google map which shows the locations of the businesses listed on the site.
+3. The site incorporates information from the Ticketmaster api on events in the city.
+4. The site features a form that the user can fill in to submit information for their business.
+5. The site has an intuitive navigation bar at the top of the screen that the user can easily use to navigate through the site. 
+6. The site features a footer with links to all social media pages fot the site. 
+
+## Deployment
+
+1. I first created a repository on Github using the code institute template.
+2. Then I used Github to access Gitpod and used this as my code editor for the project.
+3. When I was saving my work I commited it to Git using the 'git add .' and then 'git commit -m "commit message" to commit it.
+4. After this I saved the work to Github using the 'git push' command.
+5. The site was then accessed using Github pages by going into settings, scrolling down to Github Pages and then following instructions to deploy an accessible version of the site.
+
+## Testing
+1. I frequently accessed my site on numerous different mobile phones and desktop screen sizes to make sure that the site was rendering correctly and was displaying as intended.
+2. I used these different screen sizes and different web browsers i.e Google Chrome and Firefox to make sure that the three api's that I used in the site rendered correctly and were functional.
+3. I checked Google Chrome's developer tools regularly throughout development to make sure the site was responsive across screen sizes whenever I implemented a new feature.
+4. I inspected the Navigiation bar on each page it was implemented on to make sure that all links were functioning correctly. Also I checked the mobile screen to be certain that the Bootstrap JavaScript was functioning correctly for the toggler drop down menu. I did this on each page also to make sure that the correct script tags were in each html file.
+5. I used the Markup Validation Service, W3C to make sure that my html and css was validated.
+6. I used jshint to make check my javascript code was written correctly.
+7. I filled out the form on my contact.html page to make sure that I was receiving an email into my gmail account when the form was filled out.
+8. The contact form on the contact.html page must have every input filled in. Both the name and email inputs use a Bootsrap inbuilt way to inform the user that an input is not filled in. I then used code borrowed from a Web Dev Simplified tutorial to make sure the user fills in the textarea and inform them if they have not.
+9. I used the console in Google Chrome developer tools to make sure that there were no issues with the javascript employed in the site. 
+10. When opening the site on my mobile phone the hero image was not rendering. After trying numerous things to make it render I asked my mentor who tried opening the page on his mobile phone. The hero image rendered correctly on his phone. Unfortunately I still have not been able to get it working on my own which is an Iphone 7. 
+11. All links on the site have been tested to make sure there are no broken links on the site.
+12. All Google map markers on the map have been tested to make sure that the correct markers display when either the Venues, Education or Shops images are clicked. This was done simply by clicking on each one to make sure the information in the info window and the location on the map matched the image clicked.
 
  
-
-
-
-
-
-
-
 
 ## Credits
 ### Photos:
